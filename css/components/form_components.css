@@ -55,6 +55,8 @@
     column-gap: 15px;
 }
 
+
+
 .submit {
     text-align: right;
 }
@@ -93,4 +95,12 @@
     border: 1px solid #ddd;
     margin-top: 8px;
     font-size: 1rem;
+}
+
+/*Responsive*/
+@media (max-width: 540px){
+    .form .collum {
+        flex-direction:column;
+        column-gap: 15px;
+    }
 }
