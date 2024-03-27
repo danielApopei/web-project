@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register As Admin</title>
     <link rel="stylesheet" href="css/base/base.css">
     <link rel="stylesheet" href="css/components/form_components.css">
     <link rel="stylesheet" href="css/login_admin.css">
 </head>
 <body class="body">
     <div class="form-container">
-        <header id="form_title">Login</header>
+        <header id="form_title">Admin Register</header>
         <form action="#" class="form">
+            <div class="input-box">
+                <label class="label">Full Name</label>
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="input-box">
+                <label class="label">Phone number</label>
+                <input type="text" placeholder="Phone number" required>
+            </div>
+            <div class="input-box">
+                <label class="label">Institute secret code</label>
+                <input type="text" placeholder="xxxxxx" required>
+            </div>
             <div class="input-box">
                 <label class="label">Email Address</label>
                 <input type="text" placeholder="username@mail.com" required>
@@ -22,7 +34,7 @@
             </div>
             <div class="submit">
                 <button class="submit-btn">
-                    Login
+                    Register
                 </button>
             </div>
         </form>
