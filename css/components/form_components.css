@@ -50,7 +50,7 @@
 }
 
 /*Impartirea pe coloane*/
-.form .collum {
+.form .column {
     display: flex;
     column-gap: 15px;
 }
@@ -99,7 +99,7 @@
 
 /*Responsive*/
 @media (max-width: 540px){
-    .form .collum {
+    .form .column {
         flex-direction:column;
         column-gap: 15px;
     }

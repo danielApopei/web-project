@@ -17,40 +17,30 @@
         <!--Form-->
         <!--Atributul 'action' specifica calea catre care va fi trimis formul dupa submit-->
         <form action="#" class="form">
-            <div class="input-box">
-                <label class="label">Full name</label>
-                <input type="text" placeholder="Enter full name" required>
-            </div>
-            <div class="input-box">
-                <label class="label">Email Address</label>
-                <input type="text" placeholder="username@mail.com" required>
-            </div>
-
-            <div class="collum">
+            <div class="column">
                 <div class="input-box">
-                    <label class="label">Phone number</label>
-                    <input type="text" placeholder="Enter phone number" required>
+                    <label class="label">Visitor Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
                 </div>
+                <div class="input-box">
+                    <label class="label">Inmate Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+            </div>
+            <div class="column">
+                <div class="input-box">
+                    <label class="label">Visitor Email Address</label>
+                    <input type="email" placeholder="user@email.com" required>
+                </div>
+                <div class="input-box">
+                    <label class="label">Visitor Phone Number</label>
+                    <input type="tel" placeholder="+40 xxx xxx xxx" required>
+                </div>
+            </div>
+            <div class="column">
                 <div class="input-box">
                     <label class="label">Visit date</label>
                     <input type="date" placeholder="Enter visit date" required>
-                </div>
-            </div>
-
-            <div class="input-box">
-                <label class="label">Nature of the visit</label>
-                <input type="text" placeholder="Nature of visit" required>
-            </div>
-            <div class="collum">
-                <div class="input-box">
-                    <label class="label">Relationship</label>
-                    <div class="selector">
-                        <select>
-                            <option value="" disabled selected>Select option</option>
-                            <option value="family">Family / Friends</option>
-                            <option value="lawyer">Lawyer</option>
-                        </select>
-                    </div>
                 </div>
                 <div class="input-box">
                     <label class="label">Visit duration</label>
@@ -63,6 +53,24 @@
                         </select>
                     </div>
                 </div>
+            </div>
+
+            <div class="input-box">
+                <label class="label">Nature of Visit</label>
+                <input type="text" placeholder="Nature of visit" required>
+            </div>
+            <div class="column">
+                <div class="input-box">
+                    <label class="label">Relationship</label>
+                    <div class="selector">
+                        <select>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="family">Family / Friends</option>
+                            <option value="lawyer">Lawyer</option>
+                        </select>
+                    </div>
+                </div>
+                
             </div>
             <div class="submit">
                 <button class="submit-btn">
