@@ -5,3 +5,18 @@
     --light-blue: #DFF5FF; /* Yellow */
     --dark-blue-highlighted: #6baff8;
 }
+
+nav{
+  background-color: var(--dark-blue);
+  min-height: 6vh;
+}
+
+main{
+  background-color: var(--blue);
+  min-height: 88vh;
+}
+
+footer{
+  background-color: var(--dark-blue);
+  min-height: 6vh;
+}
