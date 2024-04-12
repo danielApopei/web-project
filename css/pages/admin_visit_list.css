@@ -15,16 +15,32 @@ main{
     font-family: 'Poppins', sans-serif;
 }
 
-.filter-section {
+#filter-section {
+    /* border: 1px solid red;   */
     display: grid;
-    grid-template-columns: 1fr;
-}
-
-.list-section {
     width: 100%;
-    padding: 4rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem 4rem 4rem 4rem;
+}
+.filter{
     display: flex;
     flex-direction: column;
+}
+.filter label{
+    font-weight: bold;
+}
+.filter input{
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#list-section {
+    width: 100%;
+    padding: 1rem 4rem 4rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
@@ -54,12 +70,17 @@ main{
 
 /* TABLET */
 @media screen and (min-width: 500px) {
-    .filter-section{
+    #list-section{
+        grid-template-columns: 1fr 1fr;
+    }
+    #filter-section{
         grid-template-columns: 1fr 1fr;
     }
 }
 
 /* DESKTOP */
 @media screen and (min-width: 650px){
-    
+    #filter-section{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

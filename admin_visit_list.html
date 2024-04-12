@@ -6,15 +6,29 @@
     <title>Admin Visit - DeAd</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/pages/admin_visit_list.css">
+    <script src="./js/admin_visit_list.js"></script>
 </head>
 <body>
     <header></header>
     <nav></nav>
     <main>
         <h1>Admin View</h1>
-        <section class="filter-section"></section>
+        <section id="filter-section">    
+            <div class="filter">
+                <label for="start-filter">From:</label>
+                <input type="date" name="start-filter" id="start-filter">
+            </div>
+            <div class="filter">
+                <label for="end-filter">To:</label>
+                <input type="date" name="end-filter" id="start-filter">
+            </div>
+            <div class="filter">
+                <label for="inmate-name-filter">Inmate:</label>
+                <input type="text" name="inmate-name-filter" id="inmate-name-filter">
+            </div>
+        </section>
         <h2>Visit List</h2>
-        <section class="list-section">
+        <section id="list-section">
             <a href="#" class="list-item">
                 <div class="inmate-name">The Joker</div>
             </a>
