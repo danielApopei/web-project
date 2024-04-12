@@ -47,7 +47,7 @@ main{
 
 /* TABLET */
 @media screen and (min-width: 600px) {
-    .inmate-grid{
+    #inmate-grid{
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
     }
@@ -55,7 +55,7 @@ main{
 
 /* LAPTOP */
 @media screen and (min-width: 900px) {
-    .inmate-grid{
+    #inmate-grid{
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;
     }
