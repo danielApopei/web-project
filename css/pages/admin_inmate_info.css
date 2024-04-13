@@ -5,7 +5,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+    width: 100%;
 }
+.form-container{
+    height: 100%;
+    margin: auto;
+}
+
 
 /* MOBILE */
 main {
@@ -18,19 +25,34 @@ section {
     /* border: 1px solid red; */
 }
 #inmate-id {
-    font-style: italic;
+    text-align: center;
 }
 #inmate-name {
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 400;
+    text-align: center;
 }
 ul li {
     margin-left: 2rem;
 }
-#sentence-panel{
+#sentence-panel {
+    width: 100%; /* Ensure the sentence panel takes up full width */
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: start; /* Center grid items horizontally */
 }
+
+#panel-half-1 {
+    width: 100%; /* Ensure panel-half-1 takes up full width */
+    text-align: center; /* Center text content horizontally */
+}
+
+#sentence-panel ul {
+    list-style-type: none; 
+    text-align: center;/* Elimină marcatorii (bullets) din lista din cadrul #sentence-panel */
+}
+
 #panel-half-1, #panel-half-2 {
     padding: 1rem;
     
@@ -38,9 +60,9 @@ ul li {
 }
 #panel-half-2 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:center;
+    text-align: center;
 }
 
 .circular-progress {
@@ -99,8 +121,8 @@ svg{
 
 .export-button {
     padding: 0.6rem;
-    border: 3px solid black;
-    border-radius: 0.5rem;
+    border: 1px solid black;
+    border-radius: 0.3rem;
     font-size: 1rem;  
     transition: 0.1 all linear;  
     background-color: #eee;

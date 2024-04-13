@@ -6,42 +6,47 @@
     <title>Admin Inmate Info - DeAd</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/pages/admin_inmate_info.css">
+    <link rel="stylesheet" href="css/components/form_components.css">
 </head>
 <body>
-    <header></header>
-    <nav></nav>
     <main>
-        <section id="general-info">
-            <div id="inmate-id">Inmate #387211</div>
-            <div id="inmate-name">James Wilkinson</div>
-            <div id="date-of-birth">Date of Birth: 19 March 1988</div>
-            <div id="gender">Gender: Male</div>
-            <div id="address">Home Address: 920123 Baker Street, CA, USA</div>
-        </section>
-        <section id="sentence-panel">
-            <div id="panel-half-1">
-                <h2>Sentence Status</h2>
-                <ul>
-                    <li>Crime: Robbery, Assault</li>
-                    <li>Time Served: 1y 90d</li>
-                    <li>Time Remaining: 212d</li>
-                </ul>
-            </div>
-            <div id="panel-half-2">
-                <svg class="circular-progress">
-                    <circle class="bg"></circle>
-                    <circle class="fg"></circle>
-                </svg>
-            </div>
-        </section>
-        <section id="export-panel">
-            
-            <button class="export-button" id="html-button">Export HTML</button>
-            <button class="export-button" id="csv-button">Export CSV</button>
-            <button class="export-button" id="json-button">Export JSON</button>
-        </section>
+        <div class="form-container">
+            <section id="general-info">
+                <div id="inmate-name">James Wilkinson</div>
+                <div id="inmate-id">[Inmate #387211]</div>
+                <br>
+                <div id="date-of-birth">Date of Birth: 19 March 1988</div>
+                <div id="gender">Gender: Male</div>
+                <div id="address">Home Address: 920123 Baker Street, CA, USA</div>
+                <br>
+            </section>
+            <section id="sentence-panel">
+                <div id="panel-half-1">
+                    <h2>Sentence Status</h2>
+                    <br>
+                    <ul>
+                        <li>Crime: Robbery, Assault</li>
+                        <li>Time Served: 1y 90d</li>
+                        <li>Time Remaining: 212d</li>
+                    </ul>
+                </div>
+                <br>
+                <div id="panel-half-2">
+                    <svg class="circular-progress">
+                        <circle class="bg"></circle>
+                        <circle class="fg"></circle>
+                    </svg>
+                </div>
+            </section>
+            <section id="export-panel">
+                
+                <button class="export-button" id="html-button">Export HTML</button>
+                <button class="export-button" id="csv-button">Export CSV</button>
+                <button class="export-button" id="json-button">Export JSON</button>
+            </section>
+        
+        </div>
     </main>
-    <footer></footer>
     <script src="./js/export_feature.js"></script>
 </body>
 </html>
