@@ -1,0 +1,5 @@
+document.addEventListener("readystatechange", () => {
+    let component = document.getElementById("selector");
+component.innerHTML = "        <div class=\"top\"\><div class=\"logo\"\><i class=\"bx bx-barcode\"\></i\><span\>Visit Admin App</span\></div\><i class=\"bx bx-menu\" id=\"btn\"\></i\></div\><div class=\"user\"\><img src=\"../img/img.png\" alt=\"eu\" class=\"user-img\"\><div\>    <p class=\"bold\"\>Andrei O.</p\>    <p\>Admin</p\></div\></div\><ul\><li\><a href=\"#\"\><i class=\"bx bxs-pencil\" style=\"color:#86c2f2\"  \></i\><span class=\"nav-item\"\>Plan a visit</span\></a\><span class=\"tooltip\"\>Plan a visit</span\></li\><li\><a href=\"#\"\><i class=\"bx bx-list-ul\" style=\"color:#86c2f2\" \></i\><span class=\"nav-item\"\>Visits list</span\></a\><span class=\"tooltip\"\>Visits list</span\></li\></ul\>"
+
+})
