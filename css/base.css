@@ -20,7 +20,7 @@ nav{
 
 main{
   background-color: var(--blue);
-  min-height: 88vh;
+  min-height: 100vh;
 }
 
 footer{

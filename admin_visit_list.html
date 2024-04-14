@@ -9,10 +9,8 @@
     <script src="./js/admin_visit_list.js"></script>
 </head>
 <body>
-    <header></header>
-    <nav></nav>
     <main>
-        <h1>Admin View</h1>
+        <h2>Admin View</h2>
         <section id="filter-section">    
             <div class="filter">
                 <label for="start-filter">From:</label>
@@ -27,19 +25,34 @@
                 <input type="text" name="inmate-name-filter" id="inmate-name-filter">
             </div>
         </section>
-        <h2>Visit List</h2>
-        <section id="list-section">
-            <a href="#" class="list-item">
-                <div class="inmate-name">The Joker</div>
-            </a>
-            <a href="#" class="list-item">
-                <div class="inmate-name">Harley Quinn</div>
-            </a>
-            <a href="#" class="list-item">
-                <div class="inmate-name">Lex Luthor</div>
-            </a>
-        </section>
+        <h3>Visit List</h3>
+        <table id="list-section">
+            <tbody>
+                <tr href="#" class="list-item">
+                    <td class="inmate-name">James Wilkinson</td>
+                    <td class="visitor-name">John Little</td>
+                    <td class="visit_status"><span class="due">Due</span></td>
+                </tr>
+                <tr href="#" class="list-item">
+                    <td class="inmate-name">Harley Quinn</td>
+                    <td class="visitor-name">Karla Newman</td>
+                    <td class="visit_status"><span class="complete">Complete</span></td>
+                </tr>
+                <tr href="#" class="list-item">
+                    <td class="inmate-name">Lex Luthor</td>
+                    <td class="visitor-name">Janice Tavares</td>
+                    <td class="visit_status"><span class="due">Due</span></td>
+                </tr><tr href="#" class="list-item">
+                    <td class="inmate-name">Someone Else</td>
+                    <td class="visitor-name">Verbatim</td>
+                    <td class="visit_status"><span class="due">Due</span></td>
+                </tr><tr href="#" class="list-item">
+                    <td class="inmate-name">Mr Pinky</td>
+                    <td class="visitor-name">Waluigi</td>
+                    <td class="visit_status"><span class="ongoing">Ongoing</span></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
-    <footer></footer>
 </body>
 </html>

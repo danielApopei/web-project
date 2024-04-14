@@ -13,16 +13,17 @@ main{
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    padding: 2rem 0;
 }
 
 #filter-section {
     /* border: 1px solid red;   */
     display: grid;
-    width: 100%;
+    width: 90%;
     grid-template-columns: 1fr;
     gap: 1rem;
     text-align: center;
-    padding: 1rem 4rem 4rem 4rem;
+    padding: 1rem 0;
 }
 .filter{
     display: flex;
@@ -37,33 +38,29 @@ main{
 }
 
 #list-section {
-    width: 70%;
-    padding: 1rem 4rem 4rem 4rem;
+    width:90%;
     display: grid;
     grid-template-columns: 1fr;
     border-radius: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 0 5px 5px #585a5e;
 }
 
 .list-item:first-child {
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
-
-.list-item:nth-child(even){
-    background-color: rgb(130, 184, 218);
-}
-
 .list-item:last-child {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
     
 }
 
 .list-item{
-    background-color: rgb(202, 223, 239);
+    background-color: var(--light-blue);
     min-width: 10rem;
     min-height: 2rem;
-    border: 1px solid var(--dark-blue);
+    border: 0px solid var(--dark-blue);
     /* border-radius: 1rem; */
     display: flex;
     align-items: center;
@@ -77,21 +74,57 @@ main{
     background-color: var(--light-blue-highlighted);
 }
 
+td {
+    width: 35%;
+}
+
 .inmate-name{
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 600;
     display: block;
+}
+.visitor-name{
+    font-size: 1rem;
+
+}
+
+.visit_status{
+    color: white;
+    font-weight: 600;
+}
+span{
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+.due{
+    background-color: rgb(225, 25, 25);
+}
+.complete{
+    background-color: rgb(19, 105, 19);
+}
+.ongoing{
+    background-color: orange;
 }
 
 /* TABLET */
-@media screen and (min-width: 500px) {
-
+@media screen and (min-width: 600px) {
+    #filter-section, #list-section {
+        width: 80%;
+    }
+    .inmate-name{
+        font-size: 1.2rem;
+    }
+    .visitor-name{
+        font-size: 1.1rem;
+    }
     #filter-section{
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-/* DESKTOP */
-@media screen and (min-width: 650px){
-
+/* TABLET & DESKTOP */
+@media screen and (min-width: 800px) {
+    #filter-section, #list-section{
+        width: 69%;
+    }
 }
