@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation</title>
     <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="documentation.css">
 </head>
 <body>
     <h1>Documentație DeAd (Detention Admin)</h1>
-
+    <br>
     <h2>Cuprins</h2>
     <ul>
         <li><a href="#introducere">Introducere</a></li>
@@ -20,8 +21,9 @@
         
 
         <!-- și așa mai departe pentru fiecare secțiune -->
-      </ul>
+    </ul>
 
+    <br>
     <h2 id="introducere">1. Introducere</h2>
     <p>DeAd (Detention Admin) este o aplicație web pentru gestionarea vizitelor persoanelor condamnate la executarea unei pedepse într-un penitenciar sau într-o casă de corecție.</p>
 
@@ -35,17 +37,51 @@
 
     <h2 id="structura-de-baza">3. Structura de bază a paginii</h2>
     <p>Fiecare pagină HTML a aplicației are o structură de bază comună:</p>
-    <code>
-        &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- Metadate și legături către fișierele CSS și JavaScript --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- Conținutul vizibil al paginii --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;
-    </code>
-
+    <div class="code_container">
+        <code>
+            &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- Metadate și legături către fișierele CSS și JavaScript --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- Conținutul vizibil al paginii --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;
+        </code>
+    </div>
     <h2 id="elemente-html-specifice">4. Elemente HTML specifice</h2>
 
     <h3>4.1. Formular de înregistrare a vizitelor</h3>
 
     <p>Pentru înregistrarea unei noi vizite:</p>
     <code>
-        &lt;form action="/register-visit" method="post"&gt;<br>  &lt;label for="visitor-name"&gt;Numele vizitatorului:&lt;/label&gt;<br>  &lt;input type="text" id="visitor-name" name="visitor-name"&gt;<br>  &lt;!-- Alte câmpuri pentru informații despre vizitator și natura vizitei --&gt;<br>  &lt;button type="submit"&gt;Înregistrare vizită&lt;/button&gt;<br>&lt;/form&gt;
+        <code>
+            &lt;div class="form-container"&gt;<br>
+                &lt;header id="form_title"&gt;Admin Register&lt;/header&gt;<br>
+                &lt;form action="#" class="form"&gt;<br>
+                    &lt;div class="input-box"&gt;<br>
+                        &lt;label class="label" for="name"&gt;Full Name&lt;/label&gt;<br>
+                        &lt;input id="name" type="text" placeholder="Full Name" required&gt;<br>
+                    &lt;/div&gt;<br>
+                    &lt;div class="input-box"&gt;<br>
+                        &lt;label class="label" for="phone"&gt;Phone number&lt;/label&gt;<br>
+                        &lt;input id="phone" type="text" placeholder="Phone number" required&gt;<br>
+                    &lt;/div&gt;<br>
+                    &lt;div class="input-box"&gt;<br>
+                        &lt;label class="label" for="institute-code"&gt;Institute secret code&lt;/label&gt;<br>
+                        &lt;input id="institute-code" type="text" placeholder="xxxxxx" required&gt;<br>
+                    &lt;/div&gt;<br>
+                    &lt;div class="input-box"&gt;<br>
+                        &lt;label class="label" for="email"&gt;Email Address&lt;/label&gt;<br>
+                        &lt;input id="email" type="text" placeholder="username@mail.com" required&gt;<br>
+                    &lt;/div&gt;<br>
+                    &lt;div class="input-box"&gt;<br>
+                        &lt;label class="label" for="password"&gt;Password&lt;/label&gt;<br>
+                        &lt;input id="password" type="password" placeholder="Password" required&gt;<br>
+                    &lt;/div&gt;<br>
+                    &lt;div class="submit"&gt;<br>
+                        &lt;button class="submit-btn"&gt;<br>
+                            Register<br>
+                        &lt;/button&gt;<br>
+                    &lt;/div&gt;<br>
+                &lt;/form&gt;<br>
+            &lt;/div&gt;
+        </code>
+        
+        <!-- &lt;form action="/register-visit" method="post"&gt;<br>  &lt;label for="visitor-name"&gt;Numele vizitatorului:&lt;/label&gt;<br>  &lt;input type="text" id="visitor-name" name="visitor-name"&gt;<br>  &lt;!-- Alte câmpuri pentru informații despre vizitator și natura vizitei --&gt;<br>  &lt;button type="submit"&gt;Înregistrare vizită&lt;/button&gt;<br>&lt;/form&gt; -->
     </code>
 
     <h3>4.2. Tabel pentru afișarea vizitelor</h3>
@@ -57,25 +93,183 @@
     <h3>4.3. Formular pentru adaugarea unui nou condamnat</h3>
     <p>Pentru adaugarea unui nou condamnat intr un tabel</p>
     <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+        &lt;div class="form-container"&gt;<br>
+        &lt;header id="form_title"&gt;Add new inmate&lt;/header&gt;<br>
+        &lt;!--Form--&gt;<br>
+        &lt;!--Atributul 'action' specifica calea catre care va fi trimis formul dupa submit--&gt;<br>
+        &lt;form action="#" class="form"&gt;<br>
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Inmate Full Name&lt;/label&gt;<br>
+                    &lt;input type="text" placeholder="John Doe" required&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;CNP&lt;/label&gt;<br>
+                    &lt;input type="text" placeholder="xxxxxxxxxxxxx" required&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Convicted of:&lt;/label&gt;<br>
+                    &lt;input type="email" placeholder="Crime" required&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Punishment:&lt;/label&gt;<br>
+                    &lt;input type="email" placeholder="5 years with execution" required&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Start Date:&lt;/label&gt;<br>
+                    &lt;input type="date" placeholder="Enter visit date" required&gt;<br>
+                &lt;/div&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Expected Finish Date&lt;/label&gt;<br>
+                    &lt;input type="date" placeholder="Enter visit date" required&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Birth date&lt;/label&gt;<br>
+                    &lt;input type="date" placeholder="Enter visit date" required&gt;<br>
+                &lt;/div&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Gender&lt;/label&gt;<br>
+                    &lt;div class="selector"&gt;<br>
+                        &lt;select&gt;<br>
+                            &lt;option value="" disabled selected&gt;Select option&lt;/option&gt;<br>
+                            &lt;option value="male"&gt;Male&lt;/option&gt;<br>
+                            &lt;option value="female"&gt;Female&lt;/option&gt;<br>
+                        &lt;/select&gt;<br>
+                    &lt;/div&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Goods&lt;/label&gt;<br>
+                    &lt;input type="email" placeholder="All goods" required&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+
+            &lt;div class="column"&gt;<br>
+                &lt;div class="input-box"&gt;<br>
+                    &lt;label class="label"&gt;Others&lt;/label&gt;<br>
+                    &lt;input type="email" placeholder="Other details" required&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="submit"&gt;<br>
+                &lt;button class="submit-btn"&gt;<br>
+                    Submit<br>
+                &lt;/button&gt;<br>
+            &lt;/div&gt;<br>
+        &lt;/form&gt;<br>
+    &lt;/div&gt;
+        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
     </code>
 
     <h3>4.4. Tabel pentru afișarea informatiilor despre un detinut</h3>
     <p>Tabel pentru afișarea informatiilor despre un detinut:</p>
     <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+        &lt;div class="form-container"&gt;<br>
+        &lt;section id="general-info"&gt;<br>
+            &lt;div id="inmate-name"&gt;James Wilkinson&lt;/div&gt;<br>
+            &lt;div id="inmate-id"&gt;[Inmate #387211]&lt;/div&gt;<br>
+            &lt;br&gt;<br>
+            &lt;div id="date-of-birth"&gt;Date of Birth: 19 March 1988&lt;/div&gt;<br>
+            &lt;div id="gender"&gt;Gender: Male&lt;/div&gt;<br>
+            &lt;div id="address"&gt;Home Address: 920123 Baker Street, CA, USA&lt;/div&gt;<br>
+            &lt;br&gt;<br>
+        &lt;/section&gt;<br>
+        &lt;section id="sentence-panel"&gt;<br>
+            &lt;div id="panel-half-1"&gt;<br>
+                &lt;h2&gt;Sentence Status&lt;/h2&gt;<br>
+                &lt;br&gt;<br>
+                &lt;ul&gt;<br>
+                    &lt;li&gt;Crime: Robbery, Assault&lt;/li&gt;<br>
+                    &lt;li&gt;Time Served: 1y 90d&lt;/li&gt;<br>
+                    &lt;li&gt;Time Remaining: 212d&lt;/li&gt;<br>
+                &lt;/ul&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;br&gt;<br>
+            &lt;div id="panel-half-2"&gt;<br>
+                &lt;div id="outer-loading"&gt;<br>
+                    &lt;div id="inner-loading"&gt;&lt;/div&gt;<br>
+                &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+        &lt;/section&gt;<br>
+        &lt;section id="export-panel"&gt;<br>
+            &lt;button class="export-button" id="html-button"&gt;Export HTML&lt;/button&gt;<br>
+            &lt;button class="export-button" id="csv-button"&gt;Export CSV&lt;/button&gt;<br>
+            &lt;button class="export-button" id="json-button"&gt;Export JSON&lt;/button&gt;<br>
+        &lt;/section&gt;<br>
+    &lt;/div&gt;
+        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
     </code>
 
     <h3>4.5. Formular pentru inregistrarea unui nou admin</h3>
     <p>Formular inregistrarea unui nou admin</p>
     <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+        &lt;div class="form-container"&gt;<br>
+        &lt;header id="form_title"&gt;Admin Register&lt;/header&gt;<br>
+        &lt;form action="#" class="form"&gt;<br>
+            &lt;div class="input-box"&gt;<br>
+                &lt;label class="label" for="name"&gt;Full Name&lt;/label&gt;<br>
+                &lt;input id="name" type="text" placeholder="Full Name" required&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="input-box"&gt;<br>
+                &lt;label class="label" for="phone"&gt;Phone number&lt;/label&gt;<br>
+                &lt;input id="phone" type="text" placeholder="Phone number" required&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="input-box"&gt;<br>
+                &lt;label class="label" for="institute-code"&gt;Institute secret code&lt;/label&gt;<br>
+                &lt;input id="institute-code" type="text" placeholder="xxxxxx" required&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="input-box"&gt;<br>
+                &lt;label class="label" for="email"&gt;Email Address&lt;/label&gt;<br>
+                &lt;input id="email" type="text" placeholder="username@mail.com" required&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="input-box"&gt;<br>
+                &lt;label class="label" for="password"&gt;Password&lt;/label&gt;<br>
+                &lt;input id="password" type="password" placeholder="Password" required&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="submit"&gt;<br>
+                &lt;button class="submit-btn"&gt;<br>
+                    Register<br>
+                &lt;/button&gt;<br>
+            &lt;/div&gt;<br>
+        &lt;/form&gt;<br>
+    &lt;/div&gt;
+        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
     </code>
 
     <h3>4.6. Formular pentru logarea unui nou admin</h3>
     <p>Formular inregistrarea unui nou admin</p>
     <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+        &lt;div class="form-container"&gt;<br>
+        &lt;header id="form_title"&gt;Login&lt;/header&gt;<br>
+        &lt;form action="#" class="form"&gt;<br>
+            &lt;div class="input-box"&gt;<br>
+                &lt;label class="label" for="email"&gt;Email Address&lt;/label&gt;<br>
+                &lt;input id="email" type="text" placeholder="username@mail.com" required&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="input-box"&gt;<br>
+                &lt;label class="label" for="password"&gt;Password&lt;/label&gt;<br>
+                &lt;input id="password" type="password" placeholder="Password" required&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class="submit"&gt;<br>
+                &lt;button class="submit-btn"&gt;<br>
+                    Login<br>
+                &lt;/button&gt;<br>
+            &lt;/div&gt;<br>
+        &lt;/form&gt;<br>
+    &lt;/div&gt;
+        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
     </code>
 
     <h2 id="elemente-css-specifice">5. Stiluri CSS globale</h2>
@@ -83,23 +277,251 @@
     <p>Pentru a asigura coerența și un aspect uniform, sunt folosite următoarele stiluri CSS globale:</p>
     
     <h3>5.1 form_components</h3>
-    <p>Formular inregistrarea unui nou admin</p>
+    <p>Design pattern for forms</p>
+    <div class="code_container">
     <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+        /* The big form */<br>
+        .form-container {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;max-width: 700px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--light-blue);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 25px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 8px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);<br>
+        }<br>
+        <br>
+        /* Form title */<br>
+        .form-container header {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.5rem;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #333;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-weight: 500;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+        }<br>
+        <br>
+        /* Form container */<br>
+        .form-container .form {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 30px;<br>
+        }<br>
+        <br>
+        /* Label */<br>
+        .input-box label {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #333;<br>
+        }<br>
+        <br>
+        /* Input name + text-box */<br>
+        .form .input-box {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 20px;<br>
+        }<br>
+        <br>
+        /* Text-box */<br>
+        .form .input-box input {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;height: 50px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;outline: none;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 1rem;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #707070;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 8px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #ddd;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 5px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 15px;<br>
+        }<br>
+        <br>
+        /* Dividing into columns */<br>
+        .form .column {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;column-gap: 15px;<br>
+        }<br>
+        <br>
+        /* Submit button alignment */<br>
+        .submit {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;text-align: right;<br>
+        }<br>
+        <br>
+        /* Submit button styling */<br>
+        .submit-btn {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;max-width: 120px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;min-height: 35px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 25px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--blue);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 11px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-width: 1px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-color: #ddd;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #ddd;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-weight: 500;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9rem;<br>
+        }<br>
+        <br>
+        /* Selector styling */<br>
+        .selector select {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin: none;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border: none;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 5px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;outline: none;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #707070;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding-left: 15px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 1rem;<br>
+        }<br>
+        <br>
+        /* Selector container styling */<br>
+        .selector {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;height: 50px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 5px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #ddd;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin-top: 8px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 1rem;<br>
+        }<br>
+        <br>
+        /* Responsive styling for smaller screens */<br>
+        @media (max-width: 540px) {<br>
+            .form .column {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;column-gap: 15px;<br>
+            }<br>
+        }<br>
     </code>
+</div>
 
     <h3>5.2 sidebar</h3>
     <p>Formular inregistrarea unui nou admin</p>
-    <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
-    </code>
+    <div class="code_container">
+        <code>
+        * {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;margin: 0;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 0;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;<br>
+        }<br>
+        <br>
+        .user-img {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 35px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;height: 35px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border-radius: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #DFF5FF;<br>
+        }<br>
+        <br>
+        .sidebar {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;left: 0;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;height: 100vh;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 60px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;background-color: #DFF5FF;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;padding: 0.4rem 0.8rem;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;transition: all 0.5s ease;<br>
+        }<br>
+        <br>
+        .sidebar.active ~ .form-container {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;left: 250px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: calc(100% - 280px);<br>
+        }<br>
+        <br>
+        .sidebar.active {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;width: 250px;<br>
+        }<br>
+        <br>
+        .sidebar #btn {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;color: #86c2f2;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;top: .4rem;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;left: 50%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.2rem;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;line-height: 50px;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;transform: translateX(-50%);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cursor: pointer;<br>
+        }<br>
+        <br>
+        .sidebar.active #btn {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;left: 90%;<br>
+        }<br>
+        <br>
+        /* Alte stiluri omise pentru a nu depăși limita de caractere */<br>
+        /* ... */<br>
+        <br>
+        /* Stiluri pentru ecrane mici și tablete */<br>
+        @media screen and (max-width: 768px) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.sidebar {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 50px;<br>
+            }<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.form-container {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top: 50px;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: calc(100% );<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left: 0;<br>
+            }<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.sidebar.active {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: auto;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+            }<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.main-content {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-left: 0;<br>
+            }<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.sidebar.active ul {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: inline;<br>
+            }<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.sidebar.active .user {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+            }<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.sidebar .user {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: none;<br>
+            }<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;.sidebar ul {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display: none;<br>
+            }<br>
+        }<br>
+        </code>
+    </div>
 
     <h3>5.3 base</h3>
     <p>Formular inregistrarea unui nou admin</p>
+    <div class="code_container">
     <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');<br>
+    <br>
+    *{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Poppins', sans-serif;<br>
+    }<br>
+    <br>
+    :root {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;--purple: #5356FF; /* Blue */<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;--dark-blue: #378CE7; /* Gray */<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;--blue: #67C6E3; /* Yellow */<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;--light-blue: #DFF5FF; /* Yellow */<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;--dark-blue-highlighted: #6baff8;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;--light-blue-highlighted: #afd9eb;<br>
+    }<br>
+    <br>
+    nav{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--dark-blue);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;min-height: 6vh;<br>
+    }<br>
+    <br>
+    main{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--blue);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;min-height: 88vh;<br>
+    }<br>
+    <br>
+    footer{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;background-color: var(--dark-blue);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;min-height: 6vh;<br>
+    }<br>
+        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
     </code>
-
+</div>
     <h2 id="concluzie">Concluzie</h2>
 
 

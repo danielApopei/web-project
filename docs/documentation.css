@@ -1,0 +1,13 @@
+body {
+    background-color: var(--light-blue);
+    margin-left: 6rem;
+    margin-top: 6rem;
+}
+
+.code_container {
+    background-color: rgb(221, 221, 221);
+    margin-left: 0;
+    margin-right: 0;
+    padding: 2rem;
+    border-radius: 1rem;
+}
