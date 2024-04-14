@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+</head>
+<body>
+    <h1>Documentație DeAd (Detention Admin)</h1>
+
+    <h2>1. Introducere</h2>
+    <p>DeAd (Detention Admin) este o aplicație web pentru gestionarea vizitelor persoanelor condamnate la executarea unei pedepse într-un penitenciar sau într-o casă de corecție.</p>
+
+    <h2>2. Funcționalități principale</h2>
+    <ul>
+    <li>Înregistrarea vizitelor, inclusiv informații despre vizitatori și natura vizitelor.</li>
+    <li>Consemnarea datelor despre intrevedere, inclusiv data, durata, obiecte/date furnizate, rezumatul discuțiilor.</li>
+    <li>Generarea de statistici privind vizitele, inclusiv documente HTML, CSV și JSON.</li>
+    <li>Oferea funcționalităților esențiale prin intermediul unui API Web REST/GraphQL.</li>
+    </ul>
+
+    <h2>3. Structura de bază a paginii</h2>
+    <p>Fiecare pagină HTML a aplicației are o structură de bază comună:</p>
+    <code>
+        &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- Metadate și legături către fișierele CSS și JavaScript --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- Conținutul vizibil al paginii --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;
+    </code>
+
+    <h2>4. Elemente HTML specifice</h2>
+
+    <h3>4.1. Formular de înregistrare a vizitelor</h3>
+
+    <p>Pentru înregistrarea unei noi vizite:</p>
+    <code>
+        &lt;form action="/register-visit" method="post"&gt;<br>  &lt;label for="visitor-name"&gt;Numele vizitatorului:&lt;/label&gt;<br>  &lt;input type="text" id="visitor-name" name="visitor-name"&gt;<br>  &lt;!-- Alte câmpuri pentru informații despre vizitator și natura vizitei --&gt;<br>  &lt;button type="submit"&gt;Înregistrare vizită&lt;/button&gt;<br>&lt;/form&gt;
+    </code>
+
+    <h3>4.2. Tabel pentru afișarea vizitelor</h3>
+    <p>Pentru afișarea vizitelor într-un tabel:</p>
+    <code>
+        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+    </code>
+
+    <h3>4.3. Formular pentru adaugarea unui nou condamnat</h3>
+    <p>Pentru adaugarea unui nou condamnat intr un tabel</p>
+    <code>
+        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+    </code>
+
+    <h3>4.4. Tabel pentru afișarea informatiilor despre un detinut</h3>
+    <p>Tabel pentru afișarea informatiilor despre un detinut:</p>
+    <code>
+        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+    </code>
+
+    <h3>4.5. Formular pentru inregistrarea unui nou admin</h3>
+    <p>Formular inregistrarea unui nou admin</p>
+    <code>
+        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+    </code>
+
+    <h3>4.6. Formular pentru logarea unui nou admin</h3>
+    <p>Formular inregistrarea unui nou admin</p>
+    <code>
+        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
+    </code>
+</body>
+</html>
