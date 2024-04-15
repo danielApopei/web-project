@@ -10,4 +10,6 @@ body {
     margin-right: 0;
     padding: 2rem;
     border-radius: 1rem;
+    font-size: small;
+    width:fit-content;
 }

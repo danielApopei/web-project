@@ -13,270 +13,80 @@
     <h2>Cuprins</h2>
     <ul>
         <li><a href="#introducere">Introducere</a></li>
+        <li><a href="#scop-si-obiective">Scop si obiective</a></li>
         <li><a href="#functionalitati-principale">Funcționalități principale</a></li>
+        <li><a href="#detalii-tehnice">Detalii tehnice</a></li>
         <li><a href="#structura-de-baza">Structura de bază a paginii</a></li>
         <li><a href="#elemente-html-specifice">Elemente HTML specifice</a></li>
         <li><a href="#elemente-css-specifice">Elemente CSS specifice</a></li>
         <li><a href="#concluzie">Concluzie</a></li>
-        
-
-        <!-- și așa mai departe pentru fiecare secțiune -->
     </ul>
 
     <br>
+
     <h2 id="introducere">1. Introducere</h2>
     <p>DeAd (Detention Admin) este o aplicație web pentru gestionarea vizitelor persoanelor condamnate la executarea unei pedepse într-un penitenciar sau într-o casă de corecție.</p>
 
-    <h2 id="functionalitati-principale">2. Funcționalități principale</h2>
+    <h2 id="scop-si-obiective">2.Scop si obiective</h2>
+    <p>Scopul principal al proiectului este să ofere o soluție eficientă pentru gestionarea vizitelor, astfel încât să se asigure o evidență precisă și o comunicare fluidă între condamnați și vizitatori. Obiectivele includ:    </p>
+    <ul>
+        <li><a>Înregistrarea datelor relevante despre vizite (identitatea vizitatorului, relația cu condamnatul, natura vizitei etc.).</a></li>
+        <li><a>Monitorizarea stării de sănătate și de spirit a detinutului în urma întâlnirilor</a></li>
+        <li><a>Generarea de statistici și rapoarte privind vizitele per individ, perioadă de timp și în funcție de categoria pedepsei.</a></li></ul>
+    <h2 id="functionalitati-principale">3. Funcționalități principale</h2>
     <ul>
     <li>Înregistrarea vizitelor, inclusiv informații despre vizitatori și natura vizitelor.</li>
     <li>Consemnarea datelor despre intrevedere, inclusiv data, durata, obiecte/date furnizate, rezumatul discuțiilor.</li>
     <li>Generarea de statistici privind vizitele, inclusiv documente HTML, CSV și JSON.</li>
     <li>Oferea funcționalităților esențiale prin intermediul unui API Web REST/GraphQL.</li>
     </ul>
+    <h2 id="detalii-tehnice">4. Detalii tehnice</h2>
+    <p><h4>Frontend:</h4> Interfața utilizatorului este dezvoltata folosind HTML, CSS și JavaScript. Se asigura o experiență intuitivă și prietenoasă pentru utilizatori.</p>
 
-    <h2 id="structura-de-baza">3. Structura de bază a paginii</h2>
+    <h2 id="structura">5.Structura</h2>
+    <h3 id="structura-de-baza">5.1. Structura de bază a paginii</h3>
     <p>Fiecare pagină HTML a aplicației are o structură de bază comună:</p>
     <div class="code_container">
         <code>
             &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- Metadate și legături către fișierele CSS și JavaScript --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- Conținutul vizibil al paginii --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;
         </code>
     </div>
-    <h2 id="elemente-html-specifice">4. Elemente HTML specifice</h2>
 
-    <h3>4.1. Formular de înregistrare a vizitelor</h3>
+    <h3 id="tehnologii-utilizate">5.2. Tehnologii utilizate</h3>
+    <p>Tehnologiile folosite pentru acest proiect sunt HTML5, CSS, JavaScript (interfata).</p>
+    
+    <h3 id="pagini">5.3. Pagini si experienta utilizatorului</h3>
 
-    <p>Pentru înregistrarea unei noi vizite:</p>
-    <code>
-        <code>
-            &lt;div class="form-container"&gt;<br>
-                &lt;header id="form_title"&gt;Admin Register&lt;/header&gt;<br>
-                &lt;form action="#" class="form"&gt;<br>
-                    &lt;div class="input-box"&gt;<br>
-                        &lt;label class="label" for="name"&gt;Full Name&lt;/label&gt;<br>
-                        &lt;input id="name" type="text" placeholder="Full Name" required&gt;<br>
-                    &lt;/div&gt;<br>
-                    &lt;div class="input-box"&gt;<br>
-                        &lt;label class="label" for="phone"&gt;Phone number&lt;/label&gt;<br>
-                        &lt;input id="phone" type="text" placeholder="Phone number" required&gt;<br>
-                    &lt;/div&gt;<br>
-                    &lt;div class="input-box"&gt;<br>
-                        &lt;label class="label" for="institute-code"&gt;Institute secret code&lt;/label&gt;<br>
-                        &lt;input id="institute-code" type="text" placeholder="xxxxxx" required&gt;<br>
-                    &lt;/div&gt;<br>
-                    &lt;div class="input-box"&gt;<br>
-                        &lt;label class="label" for="email"&gt;Email Address&lt;/label&gt;<br>
-                        &lt;input id="email" type="text" placeholder="username@mail.com" required&gt;<br>
-                    &lt;/div&gt;<br>
-                    &lt;div class="input-box"&gt;<br>
-                        &lt;label class="label" for="password"&gt;Password&lt;/label&gt;<br>
-                        &lt;input id="password" type="password" placeholder="Password" required&gt;<br>
-                    &lt;/div&gt;<br>
-                    &lt;div class="submit"&gt;<br>
-                        &lt;button class="submit-btn"&gt;<br>
-                            Register<br>
-                        &lt;/button&gt;<br>
-                    &lt;/div&gt;<br>
-                &lt;/form&gt;<br>
-            &lt;/div&gt;
-        </code>
+    <h4>Welcome page</h4>
+    <p>La aceasta pagina vor avea acces ambele tipuri de utilizatori si administratorii si utilizatorii neconectati.
+         Va fi prima pagina care apare cand cineva intra in aplicatie. De aici, utilizatorul isi va putea programa o vizita 
+         sau va putea sa se inregistreze ca administrator</p>
+
+    <h4>Plan a visit</h4>
+        In aceasta pagina exista un formular care va fi completat de utilizator pentru a isi programa o vizita.
+    <h4>Admin Register</h4>
+        Aceasta pagina se ocupa cu inregistrarea unui nou administrator.
+    <h4>Admin Login</h4>
+        Aceasta pagina se ocupa cu logarea unui administrator existent.
+    <h4>Admin visit info</h4>
+        Aceasta pagina este vizibila doar administratorului. Ea se ocupa cu oferirea de date despre o 
+        anumita vizita.
+    <h4>Admin visit list</h4>
+        Aceasta pagina este vizibila doar administratorului. Ea contine o lista cu toate vizitele efectuate.
+    <h4>Admin inmate list</h4>
+        Aceasta pagina este vizibila doar administratorului. Aceasta contine o lista cu toti detinutii din penitenciar sau casa de corectie.
+    <h4>Add new inmate</h4>
+        Aceasta pagina este vizibila doar administratorului. In aceasta exista un formular care, 
+        fiind completat de catre administrator, permite adaugarea unui nou detinut in penitenciar, respectiv casa de corectie.
+    <h4>Inmate info</h4>
+        Aceasta pagina este disponibila administratorului pentru a vedea detalii mai amanuntite despre un anumit prizonier.
         
-        <!-- &lt;form action="/register-visit" method="post"&gt;<br>  &lt;label for="visitor-name"&gt;Numele vizitatorului:&lt;/label&gt;<br>  &lt;input type="text" id="visitor-name" name="visitor-name"&gt;<br>  &lt;!-- Alte câmpuri pentru informații despre vizitator și natura vizitei --&gt;<br>  &lt;button type="submit"&gt;Înregistrare vizită&lt;/button&gt;<br>&lt;/form&gt; -->
-    </code>
 
-    <h3>4.2. Tabel pentru afișarea vizitelor</h3>
-    <p>Pentru afișarea vizitelor într-un tabel:</p>
-    <code>
-        &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt;
-    </code>
-
-    <h3>4.3. Formular pentru adaugarea unui nou condamnat</h3>
-    <p>Pentru adaugarea unui nou condamnat intr un tabel</p>
-    <code>
-        &lt;div class="form-container"&gt;<br>
-        &lt;header id="form_title"&gt;Add new inmate&lt;/header&gt;<br>
-        &lt;!--Form--&gt;<br>
-        &lt;!--Atributul 'action' specifica calea catre care va fi trimis formul dupa submit--&gt;<br>
-        &lt;form action="#" class="form"&gt;<br>
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Inmate Full Name&lt;/label&gt;<br>
-                    &lt;input type="text" placeholder="John Doe" required&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;CNP&lt;/label&gt;<br>
-                    &lt;input type="text" placeholder="xxxxxxxxxxxxx" required&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Convicted of:&lt;/label&gt;<br>
-                    &lt;input type="email" placeholder="Crime" required&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Punishment:&lt;/label&gt;<br>
-                    &lt;input type="email" placeholder="5 years with execution" required&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Start Date:&lt;/label&gt;<br>
-                    &lt;input type="date" placeholder="Enter visit date" required&gt;<br>
-                &lt;/div&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Expected Finish Date&lt;/label&gt;<br>
-                    &lt;input type="date" placeholder="Enter visit date" required&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Birth date&lt;/label&gt;<br>
-                    &lt;input type="date" placeholder="Enter visit date" required&gt;<br>
-                &lt;/div&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Gender&lt;/label&gt;<br>
-                    &lt;div class="selector"&gt;<br>
-                        &lt;select&gt;<br>
-                            &lt;option value="" disabled selected&gt;Select option&lt;/option&gt;<br>
-                            &lt;option value="male"&gt;Male&lt;/option&gt;<br>
-                            &lt;option value="female"&gt;Female&lt;/option&gt;<br>
-                        &lt;/select&gt;<br>
-                    &lt;/div&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Goods&lt;/label&gt;<br>
-                    &lt;input type="email" placeholder="All goods" required&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-
-            &lt;div class="column"&gt;<br>
-                &lt;div class="input-box"&gt;<br>
-                    &lt;label class="label"&gt;Others&lt;/label&gt;<br>
-                    &lt;input type="email" placeholder="Other details" required&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="submit"&gt;<br>
-                &lt;button class="submit-btn"&gt;<br>
-                    Submit<br>
-                &lt;/button&gt;<br>
-            &lt;/div&gt;<br>
-        &lt;/form&gt;<br>
-    &lt;/div&gt;
-        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
-    </code>
-
-    <h3>4.4. Tabel pentru afișarea informatiilor despre un detinut</h3>
-    <p>Tabel pentru afișarea informatiilor despre un detinut:</p>
-    <code>
-        &lt;div class="form-container"&gt;<br>
-        &lt;section id="general-info"&gt;<br>
-            &lt;div id="inmate-name"&gt;James Wilkinson&lt;/div&gt;<br>
-            &lt;div id="inmate-id"&gt;[Inmate #387211]&lt;/div&gt;<br>
-            &lt;br&gt;<br>
-            &lt;div id="date-of-birth"&gt;Date of Birth: 19 March 1988&lt;/div&gt;<br>
-            &lt;div id="gender"&gt;Gender: Male&lt;/div&gt;<br>
-            &lt;div id="address"&gt;Home Address: 920123 Baker Street, CA, USA&lt;/div&gt;<br>
-            &lt;br&gt;<br>
-        &lt;/section&gt;<br>
-        &lt;section id="sentence-panel"&gt;<br>
-            &lt;div id="panel-half-1"&gt;<br>
-                &lt;h2&gt;Sentence Status&lt;/h2&gt;<br>
-                &lt;br&gt;<br>
-                &lt;ul&gt;<br>
-                    &lt;li&gt;Crime: Robbery, Assault&lt;/li&gt;<br>
-                    &lt;li&gt;Time Served: 1y 90d&lt;/li&gt;<br>
-                    &lt;li&gt;Time Remaining: 212d&lt;/li&gt;<br>
-                &lt;/ul&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;br&gt;<br>
-            &lt;div id="panel-half-2"&gt;<br>
-                &lt;div id="outer-loading"&gt;<br>
-                    &lt;div id="inner-loading"&gt;&lt;/div&gt;<br>
-                &lt;/div&gt;<br>
-            &lt;/div&gt;<br>
-        &lt;/section&gt;<br>
-        &lt;section id="export-panel"&gt;<br>
-            &lt;button class="export-button" id="html-button"&gt;Export HTML&lt;/button&gt;<br>
-            &lt;button class="export-button" id="csv-button"&gt;Export CSV&lt;/button&gt;<br>
-            &lt;button class="export-button" id="json-button"&gt;Export JSON&lt;/button&gt;<br>
-        &lt;/section&gt;<br>
-    &lt;/div&gt;
-        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
-    </code>
-
-    <h3>4.5. Formular pentru inregistrarea unui nou admin</h3>
-    <p>Formular inregistrarea unui nou admin</p>
-    <code>
-        &lt;div class="form-container"&gt;<br>
-        &lt;header id="form_title"&gt;Admin Register&lt;/header&gt;<br>
-        &lt;form action="#" class="form"&gt;<br>
-            &lt;div class="input-box"&gt;<br>
-                &lt;label class="label" for="name"&gt;Full Name&lt;/label&gt;<br>
-                &lt;input id="name" type="text" placeholder="Full Name" required&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="input-box"&gt;<br>
-                &lt;label class="label" for="phone"&gt;Phone number&lt;/label&gt;<br>
-                &lt;input id="phone" type="text" placeholder="Phone number" required&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="input-box"&gt;<br>
-                &lt;label class="label" for="institute-code"&gt;Institute secret code&lt;/label&gt;<br>
-                &lt;input id="institute-code" type="text" placeholder="xxxxxx" required&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="input-box"&gt;<br>
-                &lt;label class="label" for="email"&gt;Email Address&lt;/label&gt;<br>
-                &lt;input id="email" type="text" placeholder="username@mail.com" required&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="input-box"&gt;<br>
-                &lt;label class="label" for="password"&gt;Password&lt;/label&gt;<br>
-                &lt;input id="password" type="password" placeholder="Password" required&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="submit"&gt;<br>
-                &lt;button class="submit-btn"&gt;<br>
-                    Register<br>
-                &lt;/button&gt;<br>
-            &lt;/div&gt;<br>
-        &lt;/form&gt;<br>
-    &lt;/div&gt;
-        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
-    </code>
-
-    <h3>4.6. Formular pentru logarea unui nou admin</h3>
-    <p>Formular inregistrarea unui nou admin</p>
-    <code>
-        &lt;div class="form-container"&gt;<br>
-        &lt;header id="form_title"&gt;Login&lt;/header&gt;<br>
-        &lt;form action="#" class="form"&gt;<br>
-            &lt;div class="input-box"&gt;<br>
-                &lt;label class="label" for="email"&gt;Email Address&lt;/label&gt;<br>
-                &lt;input id="email" type="text" placeholder="username@mail.com" required&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="input-box"&gt;<br>
-                &lt;label class="label" for="password"&gt;Password&lt;/label&gt;<br>
-                &lt;input id="password" type="password" placeholder="Password" required&gt;<br>
-            &lt;/div&gt;<br>
-            &lt;div class="submit"&gt;<br>
-                &lt;button class="submit-btn"&gt;<br>
-                    Login<br>
-                &lt;/button&gt;<br>
-            &lt;/div&gt;<br>
-        &lt;/form&gt;<br>
-    &lt;/div&gt;
-        <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
-    </code>
-
-    <h2 id="elemente-css-specifice">5. Stiluri CSS globale</h2>
+    <h2 id="elemente-css-specifice">6. Stiluri CSS globale</h2>
 
     <p>Pentru a asigura coerența și un aspect uniform, sunt folosite următoarele stiluri CSS globale:</p>
     
-    <h3>5.1 form_components</h3>
+    <h3>6.1 form_components</h3>
     <p>Design pattern for forms</p>
     <div class="code_container">
     <code>
@@ -389,7 +199,7 @@
     </code>
 </div>
 
-    <h3>5.2 sidebar</h3>
+    <h3>6.2 sidebar</h3>
     <p>Formular inregistrarea unui nou admin</p>
     <div class="code_container">
         <code>
@@ -486,7 +296,7 @@
         </code>
     </div>
 
-    <h3>5.3 base</h3>
+    <h3>6.3 base</h3>
     <p>Formular inregistrarea unui nou admin</p>
     <div class="code_container">
     <code>
@@ -522,8 +332,10 @@
         <!-- &lt;table&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th&gt;Data vizitei&lt;/th&gt;<br>      &lt;th&gt;Durata&lt;/th&gt;<br>      &lt;!-- Alte anteturi pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;td&gt;12-04-2024&lt;/td&gt;<br>      &lt;td&gt;1 oră&lt;/td&gt;<br>      &lt;!-- Alte celule pentru informații despre vizită --&gt;<br>    &lt;/tr&gt;<br>    &lt;!-- Alte rânduri pentru fiecare vizită --&gt;<br>  &lt;/tbody&gt;<br>&lt;/table&gt; -->
     </code>
 </div>
-    <h2 id="concluzie">Concluzie</h2>
+    <h2 id="concluzie">7.Concluzie</h2>
+    Proiectul DeAd va îmbunătăți procesul de gestionare a vizitelor în penitenciare și va asigura o comunicare eficientă între condamnați și vizitatori. Implementarea acestui sistem va aduce beneficii semnificative în ceea ce privește transparența și eficiența administrării vizitelor.
 
-
+    <br>
+    <br>
 </body>
 </html>
