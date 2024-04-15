@@ -6,10 +6,18 @@
 }
 
 .body {
-    min-height: 100vh;
+    background: var(--blue);
+    /* border: 2px solid lime; */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
-    background: var(--blue);
+}
+main{
+    min-height: 90vh;
+    /* border: 2px solid blue; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }

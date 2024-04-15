@@ -22,9 +22,7 @@ main {
     gap: 1rem;
     min-height: 100vh;
 }
-section {
-    /* border: 1px solid red; */
-}
+
 #general-info-panel__inmate-id {
     text-align: center;
 }

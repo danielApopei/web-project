@@ -12,7 +12,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem;
+    padding: 5rem 2rem;
 }
 #search-box{
     height: 3rem;
@@ -47,6 +47,9 @@ main{
 
 /* TABLET */
 @media screen and (min-width: 600px) {
+    main{
+        padding: 8rem;
+    }
     #inmate-grid{
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
@@ -55,6 +58,9 @@ main{
 
 /* LAPTOP */
 @media screen and (min-width: 900px) {
+    main{
+        padding: 5rem 8rem;
+    }
     #inmate-grid{
         grid-template-columns: 1fr 1fr 1fr;
         gap: 1rem;

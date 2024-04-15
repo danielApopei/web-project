@@ -148,7 +148,7 @@
     display: none;
 }
 
-.form-container{
+.sidebar__form-container{
     position: relative;
     background-color: #eee;
     min-height: 100vh;
@@ -159,7 +159,7 @@
     padding: 1rem;
 }
 
-.container {
+.sidebar__container {
     display: flex;
     justify-content: space-between;
 }
@@ -177,7 +177,7 @@
         height: 50px;
     }
     
-    .form-container{
+    .sidebar__form-container{
         margin-top: 50px;
         width: calc(100% );
         left: 0;
