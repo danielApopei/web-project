@@ -4,62 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add new Inmate</title>
-    <link rel="stylesheet" href="css/pages/register_new_inmate.css">
-    <link rel="stylesheet" href="css/components/form_components.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components/form_components.css">
+    <link rel="stylesheet" href="css/pages/register_new_inmate.css">
 </head>
 <body class="body">
     <nav></nav>
     <div class="form-container">
-        <header id="form_title">Add new inmate</header>
+        <header id="form-container__form_title">Add new inmate</header>
         <!--Form-->
         <!--Atributul 'action' specifica calea catre care va fi trimis formul dupa submit-->
-        <form action="#" class="form">
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Inmate Full Name</label>
-                    <input type="text" placeholder="John Doe" required>
+        <form action="#" class="form-container__form">
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Inmate Full Name</label>
+                    <input class="form__input" type="text" placeholder="John Doe" required>
                 </div>
             </div>
-            <div class="column">
+            <div class="form__column">
                 <div class="input-box">
-                    <label class="label">CNP</label>
-                    <input type="text" placeholder="xxxxxxxxxxxxx" required>
+                    <label class="form__label">CNP</label>
+                    <input class="form__input" type="text" placeholder="xxxxxxxxxxxxx" required>
                 </div>
             </div>
-            <div class="column">
+            <div class="form__column">
                 <div class="input-box">
-                    <label class="label">Convicted of:</label>
-                    <input type="email" placeholder="Crime" required>
+                    <label class="form__label">Convicted of:</label>
+                    <input class="form__input" type="email" placeholder="Crime" required>
                 </div>
             </div>
-            <div class="column">
+            <div class="form__column">
                 <div class="input-box">
-                    <label class="label">Punishment:</label>
-                    <input type="email" placeholder="5 years with execution" required>
+                    <label class="form__label">Punishment:</label>
+                    <input class="form__input" type="email" placeholder="5 years with execution" required>
                 </div>
             </div>
-            <div class="column">
+            <div class="form__column">
                 <div class="input-box">
-                    <label class="label">Start Date:</label>
-                    <input type="date" placeholder="Enter visit date" required>
+                    <label class="form__label">Start Date:</label>
+                    <input class="form__input" type="date" placeholder="Enter visit date" required>
                 </div>
                 <div class="input-box">
-                    <label class="label">Expected Finish Date</label>
-                    <input type="date" placeholder="Enter visit date" required>
+                    <label class="form__label">Expected Finish Date</label>
+                    <input class="form__input" type="date" placeholder="Enter visit date" required>
                 </div>
             </div>
 
             
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Birth date</label>
-                    <input type="date" placeholder="Enter visit date" required>
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Birth date</label>
+                    <input class="form__input" type="date" placeholder="Enter visit date" required>
                 </div>
-                <div class="input-box">
-                    <label class="label">Gender</label>
+                <div class="form__input-box">
+                    <label class="form__label">Gender</label>
                     <div class="selector">
-                        <select>
+                        <select class="selector__select">
                             <option value="" disabled selected>Select option</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -68,21 +68,21 @@
                 </div>
             </div>
 
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Goods</label>
-                    <input type="email" placeholder="All goods" required>
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Goods</label>
+                    <input class="form__input" type="email" placeholder="All goods" required>
                 </div>
             </div>
 
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Others</label>
-                    <input type="email" placeholder="Other details" required>
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Others</label>
+                    <input class="form__input" type="email" placeholder="Other details" required>
                 </div>
             </div>
-            <div class="submit">
-                <button class="submit-btn">
+            <div class="form__submit">
+                <button class="form__submit-btn">
                     Submit
                 </button>
             </div>

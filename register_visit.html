@@ -6,47 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Visit - DeAd</title>
 
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components/form_components.css">
     <link rel="stylesheet" href="css/pages/register_visit.css">
-    <link rel="stylesheet" href="css/base.css">
 </head>
 
 <body class="body">
     <nav></nav>
     <div class="form-container">
-        <header id="form_title">Schedule your visit</header>
+        <header id="form-container__form_title">Schedule your visit</header>
         <!--Form-->
         <!--Atributul 'action' specifica calea catre care va fi trimis formul dupa submit-->
-        <form action="#" class="form">
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Visitor Full Name</label>
-                    <input type="text" placeholder="John Doe" required>
+        <form action="#" class="form-container__form">
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Visitor Full Name</label>
+                    <input class="form__input" type="text" placeholder="John Doe" required>
                 </div>
-                <div class="input-box">
-                    <label class="label">Inmate Full Name</label>
-                    <input type="text" placeholder="John Doe" required>
-                </div>
-            </div>
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Visitor Email Address</label>
-                    <input type="email" placeholder="user@email.com" required>
-                </div>
-                <div class="input-box">
-                    <label class="label">Visitor Phone Number</label>
-                    <input type="tel" placeholder="+40 xxx xxx xxx" required>
+                <div class="form__input-box">
+                    <label class="form__label">Inmate Full Name</label>
+                    <input class="form__input" type="text" placeholder="John Doe" required>
                 </div>
             </div>
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Visit date</label>
-                    <input type="date" placeholder="Enter visit date" required>
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Visitor Email Address</label>
+                    <input class="form__input" type = "form__input" type="email" placeholder="user@email.com" required>
                 </div>
-                <div class="input-box">
-                    <label class="label">Visit duration</label>
+                <div class="form__input-box">
+                    <label class="form__label">Visitor Phone Number</label>
+                    <input class="form__input" type="tel" placeholder="+40 xxx xxx xxx" required>
+                </div>
+            </div>
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Visit date</label>
+                    <input class="form__input" type="date" placeholder="Enter visit date" required>
+                </div>
+                <div class="form__input-box">
+                    <label class="form__label">Visit duration</label>
                     <div class="selector">
-                        <select>
+                        <select class="selector__select">
                             <option>11:05-12.00</option>
                             <option>12:05-13.00</option>
                             <option>13:05-14.00</option>
@@ -56,15 +56,15 @@
                 </div>
             </div>
 
-            <div class="input-box">
-                <label class="label">Nature of Visit</label>
-                <input type="text" placeholder="Nature of visit" required>
+            <div class="form__input-box">
+                <label class="form__label">Nature of Visit</label>
+                <input class="form__input" input="form__input" type="text" placeholder="Nature of visit" required>
             </div>
-            <div class="column">
-                <div class="input-box">
-                    <label class="label">Relationship</label>
+            <div class="form__column">
+                <div class="form__input-box">
+                    <label class="form__label">Relationship</label>
                     <div class="selector">
-                        <select>
+                        <select class="selector__select">
                             <option value="" disabled selected>Select option</option>
                             <option value="family">Family / Friends</option>
                             <option value="lawyer">Lawyer</option>
@@ -73,8 +73,8 @@
                 </div>
                 
             </div>
-            <div class="submit">
-                <button class="submit-btn">
+            <div class="form__submit">
+                <button class="form__submit-btn">
                     Submit
                 </button>
             </div>

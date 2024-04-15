@@ -16,9 +16,9 @@
     background: #EB7960;
 }
 
-body .form-container, .form{
+.form-container__form{
     background: #f9c6bb;
 }
-.form button{
+.form__submit-btn{
     background: rgb(243, 53, 53);
 }

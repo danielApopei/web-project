@@ -12,7 +12,7 @@
 }
 
 /*Form title*/
-.form-container header {
+#form-container__form_title {
     font-size: 1.5rem;
     color: #333;
     font-weight: 500;
@@ -20,23 +20,23 @@
 }
 
 /*Form container*/
-.form-container .form {
+.form-container___form {
     margin-top: 30px;
 }
 
 /**/
-.input-box label {
+.form__label {
     color: #333;
 }
 
 /*Input name + text-box*/
-.form .input-box {
+.form__input-box {
     width: 100%;
     margin-top: 20px;
 }
 
 /*text-box*/
-.form .input-box input {
+.form__input {
     position: relative;
     height: 50px;
     width: 100%;
@@ -50,18 +50,18 @@
 }
 
 /*Impartirea pe coloane*/
-.form .column {
+.form__column {
     display: flex;
     column-gap: 15px;
 }
 
 
 
-.submit {
+.form__submit {
     text-align: right;
 }
 
-.submit-btn {
+.form__submit-btn {
     max-width: 120px;
     min-height: 35px;
     width: 100%;
@@ -76,7 +76,7 @@
     font-size:0.9rem;
 }
 
-.selector select {
+.selector__select {
     height: 100%;
     width: 100%;
     margin: none;
@@ -99,7 +99,7 @@
 
 /*Responsive*/
 @media (max-width: 540px){
-    .form .column {
+    .form__column {
         flex-direction:column;
         column-gap: 15px;
     }

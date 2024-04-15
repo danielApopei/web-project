@@ -29,7 +29,7 @@ function loadInmateList() {
     for(let i = 0; i < filteredList.length; i++) {
         let inmateLink = document.createElement("a");
         inmateLink.textContent = filteredList[i];
-        inmateLink.classList.add("inmate-item");
+        inmateLink.classList.add("inmate-grid__inmate-item");
         inmateGrid.appendChild(inmateLink);
     }
 }

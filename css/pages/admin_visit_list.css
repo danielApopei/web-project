@@ -26,14 +26,14 @@ main{
     text-align: center;
     padding: 1rem 0;
 }
-.filter{
+.filter-section__filter{
     display: flex;
     flex-direction: column;
 }
-.filter label{
+.filter-section__filter label{
     font-weight: bold;
 }
-.filter input{
+.filter-section__filter input{
     border-radius: 0.5rem;
     padding: 0.5rem;
 }
@@ -50,17 +50,17 @@ main{
     
 }
 
-.list-item:first-child {
+.list-section__list-item:first-child {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 }
-.list-item:last-child {
+.list-section__list-item:last-child {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     
 }
 
-.list-item{
+.list-section__list-item{
     /* background-color: var(--light-blue); */
     background-color: rgb(193, 193, 193);
     min-width: 10rem;
@@ -75,7 +75,7 @@ main{
     transition: 0.15s all linear;
 }
 
-.list-item:hover{
+.list-section__list-item:hover{
     background-color: var(--light-blue-highlighted);
 }
 
@@ -83,17 +83,17 @@ td {
     width: 35%;
 }
 
-.inmate-name{
+.list-item__inmate-name{
     font-size: 1.1rem;
     font-weight: 450;
     display: block;
 }
-.visitor-name{
+.list-item__visitor-name{
     font-size: 1rem;
 
 }
 
-.visit_status{
+.list-item__visit_status{
     color: white;
     font-weight: 600;
 }
@@ -101,13 +101,13 @@ span{
     padding: 0.3rem;
     border-radius: 0.5rem;
 }
-.due{
+.list-item__visit_status--due{
     background-color: rgb(225, 25, 25);
 }
-.complete{
+.list-item__visit_status--complete{
     background-color: rgb(19, 105, 19);
 }
-.ongoing{
+.list-item__visit_status--ongoing{
     background-color: orange;
 }
 
@@ -116,10 +116,10 @@ span{
     #filter-section, #list-section {
         width: 80%;
     }
-    .inmate-name{
+    .list-item__inmate-name{
         font-size: 1.2rem;
     }
-    .visitor-name{
+    .list-item__visitor-name{
         font-size: 1.1rem;
     }
     #filter-section{

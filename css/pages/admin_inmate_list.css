@@ -29,7 +29,7 @@ main{
     font-size: 1.5rem;
 }
 
-.inmate-item{
+.inmate-grid__inmate-item{
     border: 5px solid var(--dark-blue);
     border-radius: 1rem;
     min-height: 10rem;
@@ -41,7 +41,7 @@ main{
     font-size: 2rem;
     font-weight: 500;
 }
-.inmate-item:hover{
+.inmate-grid__inmate-item:hover{
     background-color: var(--light-blue-highlighted);
 }
 

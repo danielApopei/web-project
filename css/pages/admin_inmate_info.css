@@ -25,10 +25,10 @@ main {
 section {
     /* border: 1px solid red; */
 }
-#inmate-id {
+#general-info-panel__inmate-id {
     text-align: center;
 }
-#inmate-name {
+#general-info-panel__inmate-name {
     font-size: 2.5rem;
     font-weight: 400;
     text-align: center;
@@ -41,20 +41,15 @@ section {
     justify-items: start; 
 }
 
-#panel-half-1 h1, #panel-half-1{
+#sentence-panel__panel-half-1 h1, #sentence-panel__panel-half-1{
     text-align: center;
 }
 
 #sentence-panel ul {
     list-style-type: none; 
-    /* text-align: center;Elimină marcatorii (bullets) din lista din cadrul #sentence-panel */
 }
 
-#panel-half-1, #panel-half-2 {
-    /* border: 1px solid blue; */
-    /* border: 1px solid blue; */
-}
-#panel-half-2 {
+#sentence-panel__panel-half-2 {
     display: flex;
     justify-content: center;
     align-items:center;
@@ -68,14 +63,14 @@ section {
     100% { width: 70%; }
   }
 
-#outer-loading {
+#sentence-panel__panel-half-2__outer-loading {
     width: 100%;
     height: 2rem;
     background-color: #ccc;
     border-radius: 0.5rem;
 }
 
-#inner-loading{
+#sentence-panel__panel-half-2__inner-loading{
     height: 100%;
     width: 70%;
     background-color: var(--blue);
@@ -90,7 +85,7 @@ section {
     gap: 0.5rem;
 }
 
-.export-button {
+.export-panel__export-button {
     padding: 0.6rem;
     border: 1px solid black;
     border-radius: 0.3rem;
@@ -99,7 +94,7 @@ section {
     background-color: #eee;
 }
 
-.export-button:hover {
+.export-panel__export-button:hover {
     background-color: #ccc;
     cursor: pointer;
 }
@@ -108,10 +103,10 @@ section {
 
 /* TABLET */
 @media screen and (min-width: 600px) {
-    #general-info div {
+    #general-info-panel div {
         text-align: left;
     }
-    #general-info #inmate-name, #general-info #inmate-id{
+    #general-info-panel #general-info-panel__inmate-name, #general-info-panel #general-info-panel__inmate-id{
         text-align: center;
     }
     #sentence-panel{
@@ -120,7 +115,7 @@ section {
     #sentence-panel li{
         text-align: left;
     }
-    #panel-half-1{
+    #sentence-panel__panel-half-1{
         text-align: left;
     }
 }

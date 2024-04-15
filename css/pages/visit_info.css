@@ -30,28 +30,28 @@ main{
 }
 
 
-.visit-section table{
+.visit-section__table{
     /* gap: 2rem; */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-.visit-section th {
+.visit-section__th {
     font-weight: 500;
     text-align: right;
     padding: 0.5rem;
     background-color:rgb(143, 185, 206);
 }
-.visit-section td{
+.visit-section__td{
     text-align: left;
     padding: 0.5rem;
     background-color: lightgray;
 }
 
-td.complete {
+.visit-section__table--complete {
     color: green;
     font-weight: bold;
 }
 
-.unavailable {
+.visit-section__table--unavailable {
     color: gray;
     font-style: italic;
     font-weight: bold;
@@ -62,14 +62,14 @@ td.complete {
     padding: 1rem 0 0 0;
 }
 
-.grid-table {
+.visit-section__grid-table {
     display: grid;
     grid-template-columns: 1fr;
 }
-.grid-table h4 {
+.visit-section__grid-table h4 {
     margin-top: 0.8rem;
 }
-button{
+.visit-section__button{
     background-color: var(--light-blue);
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -88,7 +88,7 @@ button{
     #title-section, #status-section, #export-section {
         width: 40%;
     }
-    .grid-table {
+    .visit-section__grid-table {
         margin-top: 1rem;
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 0.5rem;
