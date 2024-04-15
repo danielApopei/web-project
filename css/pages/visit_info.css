@@ -11,16 +11,24 @@ main{
     padding: 4rem 2rem;
 }
 
+.visit-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .visit-section{
     margin-top: 2rem;
     text-align: center;
 }
 
-#title-section {
+#title-section, #status-section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 90%;
 }
+
 
 .visit-section table{
     /* gap: 2rem; */
@@ -35,4 +43,52 @@ main{
     text-align: left;
     padding: 0.5rem;
     background-color: lightgray;
+}
+
+td.complete {
+    color: green;
+    font-weight: bold;
+}
+
+.unavailable {
+    color: gray;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#export-section {
+    width: 70%;
+    padding: 1rem 0 0 0;
+}
+
+.grid-table {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.grid-table h4 {
+    margin-top: 0.8rem;
+}
+button{
+    background-color: var(--light-blue);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* TABLET */
+@media screen and (min-width: 700px) {
+    #title-section, #status-section, #export-section {
+        width: 70%;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1000px) {
+    #title-section, #status-section, #export-section {
+        width: 40%;
+    }
+    .grid-table {
+        margin-top: 1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 0.5rem;
+    }
 }
