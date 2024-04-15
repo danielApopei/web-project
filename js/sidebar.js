@@ -42,6 +42,13 @@ function main() {
         <span class="tooltip">Visits list</span>
     </li>
     <li>
+        <a href="./register_new_inmate.html">
+            <i class='bx bx-show-alt' style="color: #86c2f2;"></i>
+            <span class="nav-item">Register New Inmate</span>
+        </a>
+        <span class="tooltip">Register New Inmate</span>
+    </li>
+    <li>
         <a href="./admin_inmate_list.html">
             <i class='bx bx-show-alt' style="color: #86c2f2;"></i>
             <span class="nav-item">Prisoners</span>
