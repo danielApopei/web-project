@@ -80,8 +80,8 @@ section {
 
 
 #export-panel{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
 }
 
@@ -90,7 +90,7 @@ section {
     border: 1px solid black;
     border-radius: 0.3rem;
     font-size: 1rem;  
-    transition: 0.1 all linear;  
+    transition: 0.1s all linear;  
     background-color: #eee;
 }
 
@@ -126,7 +126,10 @@ section {
         font-size: min(2vw, 1.3rem);
     }
     #export-panel{
-        flex-direction: row;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #export-panel__title{
+        grid-column: span 3;
     }
     .circular-progress{
         --size: 7em;
