@@ -20,7 +20,7 @@
 }
 
 /*Form container*/
-.form-container___form {
+.form-container__form {
     margin-top: 30px;
 }
 
@@ -54,7 +54,6 @@
     display: flex;
     column-gap: 15px;
 }
-
 
 
 .form__submit {
