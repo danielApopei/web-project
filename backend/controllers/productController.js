@@ -1,6 +1,6 @@
 const Product = require('../models/productModel')
 
-const { getPostData } = require('../utils')
+const { getPostData } = require('../utils/utils')
 
 
 // @desc    Gets All Products
