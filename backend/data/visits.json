@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "visitorName": "John Doe",
+    "inmateName": "Jane Doe",
+    "visitorEmail": "vit1@gmail.com",
+    "visitorPhone": "1234567890",
+    "visitDate": "2021-07-01",
+    "visitDuration": "10:00",
+    "natureOfVisit": "Personal",
+    "relationship": "Spouse"
+  },
+  {
+    "id": "2",
+    "visitorName": "Alice Smith",
+    "inmateName": "Bob Smith",
+    "visitorEmail": "vit2@gmail.com",
+    "visitorPhone": "1234567891",
+    "visitDate": "2021-07-02",
+    "visitDuration": "10:30",
+    "natureOfVisit": "Personal",
+    "relationship": "Sibling"
+  },
+  {
+    "id": "3",
+    "visitorName": "Charlie Johnson",
+    "inmateName": "David Johnson",
+    "visitorEmail": "vit3@gmail.com",
+    "visitorPhone": "1234567892",
+    "visitDate": "2021-07-03",
+    "visitDuration": "11:00",
+    "natureOfVisit": "Legal",
+    "relationship": "Lawyer"
+  },
+  {
+    "id": "4",
+    "visitorName": "Eve Brown",
+    "inmateName": "Frank Brown",
+    "visitorEmail": "vit4@gmail.com",
+    "visitorPhone": "1234567893",
+    "visitDate": "2021-07-04",
+    "visitDuration": "11:30",
+    "natureOfVisit": "Personal",
+    "relationship": "Parent"
+  },
+  {
+    "id": "5",
+    "visitorName": "Grace Davis",
+    "inmateName": "Henry Davis",
+    "visitorEmail": "vit5@gmail.com",
+    "visitorPhone": "1234567894",
+    "visitDate": "2021-07-05",
+    "visitDuration": "12:00",
+    "natureOfVisit": "Personal",
+    "relationship": "Child"
+  },
+  {
+    "id": "6",
+    "visitorName": "Ivy Miller",
+    "inmateName": "Jack Miller",
+    "visitorEmail": "vit6@gmail.com",
+    "visitorPhone": "1234567895",
+    "visitDate": "2021-07-06",
+    "visitDuration": "12:30",
+    "natureOfVisit": "Legal",
+    "relationship": "Lawyer"
+  },
+  {
+    "id": "7",
+    "visitorName": "Kelly Wilson",
+    "inmateName": "Liam Wilson",
+    "visitorEmail": "vit7@gmail.com",
+    "visitorPhone": "1234567896",
+    "visitDate": "2021-07-07",
+    "visitDuration": "13:00",
+    "natureOfVisit": "Personal",
+    "relationship": "Spouse"
+  },
+  {
+    "id": "8",
+    "visitorName": "Mia Moore",
+    "inmateName": "Noah Moore",
+    "visitorEmail": "vit8@gmail.com",
+    "visitorPhone": "1234567897",
+    "visitDate": "2021-07-08",
+    "visitDuration": "13:30",
+    "natureOfVisit": "Personal",
+    "relationship": "Sibling"
+  },
+  {
+    "id": "9",
+    "visitorName": "Olivia Taylor",
+    "inmateName": "Peter Taylor",
+    "visitorEmail": "vit9@gmail.com",
+    "visitorPhone": "1234567898",
+    "visitDate": "2021-07-09",
+    "visitDuration": "14:00",
+    "natureOfVisit": "Legal",
+    "relationship": "Lawyer"
+  },
+  {
+    "id": "10",
+    "visitorName": "Quinn Anderson",
+    "inmateName": "Robert Anderson",
+    "visitorEmail": "vit10@gmail.com",
+    "visitorPhone": "1234567899",
+    "visitDate": "2021-07-10",
+    "visitDuration": "14:30",
+    "natureOfVisit": "Personal",
+    "relationship": "Parent"
+  }
+]

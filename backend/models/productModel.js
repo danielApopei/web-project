@@ -39,7 +39,7 @@ function remove(id){
         writeDataToFile('./data/products.json', products);
         resolve("product with id ${id} has been removed");
     })
-}
+}       
 
 
 
