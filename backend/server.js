@@ -1,6 +1,16 @@
 const http = require('http')
 const handleProductRequest = require('./routes/productRoutes')
 const handleVisitRequest = require('./routes/visitRoutes')
+const client = require('./config/database')
+
+//Check the database connection
+client.query('SELECT NOW()', (err, res) => {
+    if(err){
+        console.log(err.stack)
+    } else {
+        console.log(res.rows[0])
+    }
+})
 
 
 const server = http.createServer((req, res) => {
