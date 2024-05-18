@@ -1,12 +1,16 @@
-const {getVisits, createVisit, deleteVisit} = require('../controllers/visitController');
+const {getVisits, createVisit, deleteVisit, updateVisit} = require('../controllers/visitController');
 
 function handleVisitRequest(req, res) {
     if(req.url === '/api/visits' && req.method === 'GET') {
         getVisits(req, res)
     } else if(req.url === '/api/visits' && req.method === 'POST') {
         createVisit(req, res)
-    } else if(req.url === '/api/visits' && req.method === 'DELETE') {
-        deleteVisit(req, res)
+    } else if(req.url.match(/\/api\/visits\/([0-9]+)/) && req.method === 'DELETE') {
+        const id = req.url.split('/')[3]
+        deleteVisit(req, res, id)
+    }  else if(req.url.match(/\/api\/visits\/([0-9]+)/) && req.method === 'PUT') {
+        const id = req.url.split('/')[3]
+        updateVisit(req, res, id)
     }else {
         return false; // Indicate that the request was not handled
     }

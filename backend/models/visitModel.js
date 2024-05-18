@@ -8,6 +8,13 @@ function findAll(){
     });
 }
 
+function findById(id){
+    return new Promise((resolve, reject) => {
+        const visit = visits.find((v) => v.id === id);
+        resolve(visit);
+    })
+}
+
 function create(visit){
     return new Promise((resolve, reject) => {
         const newVisit = {id: uuidv4(), ...visit};
@@ -25,8 +32,18 @@ function remove(id){
     })
 }
 
+function update(id, visit){
+    return new Promise((resolve, reject) => {
+        const index = visits.findIndex((v) => v.id === id);
+        visits[index] = {id, ...visit};
+        writeDataToFile('./data/visits.json', visits);
+        resolve(visits[index]);
+    })
+}
+
 module.exports = {
     findAll,
     create,
-    remove
+    remove,
+    findById
 }
