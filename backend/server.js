@@ -4,6 +4,17 @@ const handleVisitRequest = require('./routes/visitRoutes')
 
 
 const server = http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5501');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Handle OPTIONS requests
+    if (req.method === 'OPTIONS') {
+        res.writeHead(200);
+        res.end();
+        return;
+    }
+
     if(!handleProductRequest(req, res) && !handleVisitRequest(req, res)){
         res.writeHead(404, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({message: 'Route Not Found'}));
