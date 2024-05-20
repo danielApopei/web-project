@@ -12,6 +12,24 @@ client.query('SELECT NOW()', (err, res) => {
     }
 })
 
+//create the tables
+client.query('Create table if not exists visits ( id serial primary key, visitorName varchar(255), inmateName varchar(255), visitorEmail varchar(255), visitorPhone varchar(255), visitDate date, visitDuration varchar(255), natureOfVisit varchar(255), relationship varchar(255))' , (err, res) => {
+    if(err){
+        console.log(err.stack)
+    } else {
+        console.log(res)
+    }
+});
+
+client.query('create table if not exists inmates( id serial primary key, name varchar(255), CNP varchar(255), convictedFor varchar(255), sentence varchar(255), entryDate date, releaseDate date, goods varchar(255), others varchar(255))', (err, res) => {
+    if(err){
+        console.log(err.stack)
+    } else {
+        console.log(res)
+    }
+});
+    
+
 
 const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5501');
