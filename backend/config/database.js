@@ -11,6 +11,14 @@ const client = new Client({
     port: 5432
 });
 
+// const client = new Client({
+//     host: 'my-db-instance.cj22i4600phr.eu-north-1.rds.amazonaws.com',
+//     user: 'postgres',
+//     password: 'password',
+//     database:'admin_inmate_info_db',
+//     port: 5432
+// });
+
 client.connect(err => {
     if(err){
         console.error('connection error', err.stack);

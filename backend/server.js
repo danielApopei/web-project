@@ -1,6 +1,7 @@
 const http = require('http')
 const handleProductRequest = require('./routes/productRoutes')
 const handleVisitRequest = require('./routes/visitRoutes')
+const handleInmateRequest = require('./routes/inmateRoutes')
 const client = require('./config/database')
 
 //Check the database connection
@@ -35,17 +36,12 @@ const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5501');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
 
-    // Handle OPTIONS requests
-    if (req.method === 'OPTIONS') {
-        res.writeHead(200);
-        res.end();
-        return;
-    }
-
-    if(!handleProductRequest(req, res) && !handleVisitRequest(req, res)){
+    if(!handleProductRequest(req, res) && !handleVisitRequest(req, res) && !handleInmateRequest(req, res)){
         res.writeHead(404, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({message: 'Route Not Found'}));
+        return
     }   
 })
 

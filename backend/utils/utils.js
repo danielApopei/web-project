@@ -25,6 +25,23 @@ function getPostData(req){
     })
 }
 
+function getInmateData(req){
+    return new Promise((resolve, reject) => {
+        try{
+            let body = '';
+            req.on('data', (chunk) => {
+                body += chunk.toString();
+            })
+
+            req.on('end', () => {
+                resolve(body);
+            })
+        } catch(error){
+            reject(error);
+        }
+    })
+}
+
 function getVisitData(req){
     return new Promise((resolve, reject) => {
         try{
@@ -45,5 +62,6 @@ function getVisitData(req){
 module.exports = {
     writeDataToFile,
     getPostData,
-    getVisitData
+    getVisitData,
+    getInmateData
 }
