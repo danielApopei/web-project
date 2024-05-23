@@ -20,7 +20,7 @@ async function createInmate(req, res){
         const body = await getInmateData(req)
 
         //trim data from body
-        const { name, CNP, convictedFor, sentence, entryDate, releaseDate, goods, others} = JSON.parse(body)
+        const { name, CNP, convictedFor, sentence, entryDate, releaseDate, birthDate, gender, goods, others} = JSON.parse(body)
 
         const newInmate = {
             name, 
@@ -29,6 +29,8 @@ async function createInmate(req, res){
             sentence, 
             entryDate, 
             releaseDate, 
+            birthDate,
+            gender,
             goods,
             others
         }

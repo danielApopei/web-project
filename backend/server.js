@@ -22,7 +22,7 @@ client.query('Create table if not exists visits ( id serial primary key, visitor
     }
 });
 
-client.query('create table if not exists inmates( id serial primary key, name varchar(255), CNP varchar(255), convictedFor varchar(255), sentence varchar(255), entryDate date, releaseDate date, goods varchar(255), others varchar(255))', (err, res) => {
+client.query('create table if not exists inmates( id serial primary key, name varchar(255), CNP varchar(255), convictedFor varchar(255), sentence varchar(255), entryDate date, releaseDate date, birthDate date, gender varchar(255),goods varchar(255), others varchar(255))', (err, res) => {
     if(err){
         console.log(err.stack)
     } else {
@@ -33,10 +33,17 @@ client.query('create table if not exists inmates( id serial primary key, name va
 
 
 const server = http.createServer((req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5501');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Handle OPTIONS method
+    if (req.method === 'OPTIONS') {
+        res.writeHead(200); // Respond with 200 OK
+        res.end();
+        return;
+    }
 
     if(!handleProductRequest(req, res) && !handleVisitRequest(req, res) && !handleInmateRequest(req, res)){
         res.writeHead(404, {'Content-Type': 'application/json'})
