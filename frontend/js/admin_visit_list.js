@@ -62,3 +62,41 @@
 
 // document.addEventListener("readystatechange", setupStuff);
 
+
+fetch('http://localhost:5000/api/visits')
+    .then(response => response.json())
+    .then(data => {
+        // Get the table body
+        const tbody = document.getElementById('list-section').getElementsByTagName('tbody')[0];
+
+        // Loop through the data and create a new row for each item
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.className = 'list-section__list-item';
+
+            // Create a new cell for each property
+            const inmateCell = document.createElement('td');
+            inmateCell.className = 'list-item__inmate-name';
+            inmateCell.textContent = item.inmateName;
+            row.appendChild(inmateCell);
+
+            const visitorCell = document.createElement('td');
+            visitorCell.className = 'list-item__visitor-name';
+            visitorCell.textContent = item.visitorName;
+            row.appendChild(visitorCell);
+
+            const visitDateCell = document.createElement('td');
+            visitDateCell.className = 'list-item__visit-date';
+            visitDateCell.textContent = item.visitDate;
+            row.appendChild(visitDateCell);
+
+            const visitTimeCell = document.createElement('td');
+            visitTimeCell.className = 'list-item__visit-time';
+            visitTimeCell.textContent = item.visitDuration;
+            row.appendChild(visitTimeCell);
+
+            // Append the row to the table body
+            tbody.appendChild(row);
+        });
+    })
+    .catch(error => console.error('Error:', error));

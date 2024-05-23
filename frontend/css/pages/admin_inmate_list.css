@@ -14,6 +14,8 @@ main{
     gap: 1rem;
     padding: 5rem 2rem;
 }
+
+
 #search-box{
     height: 3rem;
     font-size: 1.5rem;
@@ -24,25 +26,32 @@ main{
     /* border: 1px solid red; */
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     text-align: center;
     font-size: 1.5rem;
 }
 
 .inmate-grid__inmate-item{
-    border: 5px solid var(--dark-blue);
-    border-radius: 1rem;
-    min-height: 10rem;
+    border: 2px solid var(--dark-blue);
+    border-radius: 1.2rem;
+    min-height: 4rem;
     background-color: var(--light-blue);
     transition: 0.1s all linear;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 .inmate-grid__inmate-item:hover{
     background-color: var(--light-blue-highlighted);
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 4rem;;
 }
 
 /* TABLET */
@@ -62,7 +71,7 @@ main{
         padding: 5rem 8rem;
     }
     #inmate-grid{
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
         gap: 1rem;
     }
 }
