@@ -31,7 +31,10 @@ form.addEventListener('submit', function(event) {
         },
         body: JSON.stringify(visitData)
     }).then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        console.log(data)
+        alert('Visit scheduled successfully!');
+    })
     .catch(error => console.log('Error: ', error)
     )
 

@@ -77,22 +77,23 @@ fetch('http://localhost:5000/api/visits')
             // Create a new cell for each property
             const inmateCell = document.createElement('td');
             inmateCell.className = 'list-item__inmate-name';
-            inmateCell.textContent = item.inmateName;
+            inmateCell.textContent = item.inmatename;
             row.appendChild(inmateCell);
 
             const visitorCell = document.createElement('td');
             visitorCell.className = 'list-item__visitor-name';
-            visitorCell.textContent = item.visitorName;
+            visitorCell.textContent = item.visitorname;
             row.appendChild(visitorCell);
 
             const visitDateCell = document.createElement('td');
             visitDateCell.className = 'list-item__visit-date';
-            visitDateCell.textContent = item.visitDate;
+            // Split the date string on the "T" character and take the first part (the date)
+            visitDateCell.textContent = item.visitdate.split('T')[0];
             row.appendChild(visitDateCell);
 
             const visitTimeCell = document.createElement('td');
             visitTimeCell.className = 'list-item__visit-time';
-            visitTimeCell.textContent = item.visitDuration;
+            visitTimeCell.textContent = item.visitduration;
             row.appendChild(visitTimeCell);
 
             // Append the row to the table body
