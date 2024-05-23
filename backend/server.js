@@ -22,7 +22,7 @@ client.query('Create table if not exists visits ( id serial primary key, visitor
     }
 });
 
-client.query('create table if not exists inmates( id serial primary key, name varchar(255), CNP varchar(255), convictedFor varchar(255), sentence varchar(255), entryDate date, releaseDate date, birthDate date, gender varchar(255),goods varchar(255), others varchar(255))', (err, res) => {
+client.query('create table if not exists inmates( id serial primary key, name varchar(255), CNP varchar(255), convictedFor varchar(255), sentence varchar(255), entryDate date, releaseDate date, birthDate date, gender varchar(255) ,goods varchar(255), others varchar(255))', (err, res) => {
     if(err){
         console.log(err.stack)
     } else {

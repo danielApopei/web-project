@@ -37,7 +37,7 @@ async function createInmate(req, res){
 
         const inmate = await Inmate.create(newInmate)
         res.writeHead(201, {'Content-Type': 'application/json'}) // 201 means something was created
-        return res.end(JSON.stringify(newInmate))
+        return res.end(JSON.stringify(inmate))
         
     } catch(error){
         console.log(error)
