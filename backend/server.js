@@ -2,6 +2,7 @@ const http = require('http')
 const handleProductRequest = require('./routes/productRoutes')
 const handleVisitRequest = require('./routes/visitRoutes')
 const handleInmateRequest = require('./routes/inmateRoutes')
+const handleRegistrationRequest = require('./routes/adminRegisterRoutes')
 const client = require('./config/database')
 
 //Check the database connection
@@ -29,6 +30,15 @@ client.query('create table if not exists inmates( id serial primary key, name va
         console.log(res)
     }
 });
+
+client.query('create table if not exists admins( id serial primary key, fullName varchar(255), phoneNumber varchar(255), instituteSecretCode varchar(255), email varchar(255), password varchar(255))', (err, res) => {
+    if(err){
+        console.log(err.stack)
+    }
+    else{
+        console.log(res)
+    }
+});
     
 
 
@@ -45,7 +55,10 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    if(!handleProductRequest(req, res) && !handleVisitRequest(req, res) && !handleInmateRequest(req, res)){
+    if(!handleProductRequest(req, res) 
+        && !handleVisitRequest(req, res) 
+        && !handleInmateRequest(req, res)
+        && !handleRegistrationRequest(req, res)){
         res.writeHead(404, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({message: 'Route Not Found'}));
         return

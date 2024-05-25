@@ -59,9 +59,27 @@ function getVisitData(req){
     })
 }
 
+function getAdminData(req){
+    return new Promise((resolve, reject) => {
+        try{
+            let body = '';
+            req.on('data', (chunk) => {
+                body += chunk.toString();
+            })
+
+            return body;
+        } catch(error){
+            reject(error);
+        }
+    })
+
+}
+
+
 module.exports = {
     writeDataToFile,
     getPostData,
     getVisitData,
-    getInmateData
+    getInmateData,
+    getAdminData
 }
