@@ -43,6 +43,16 @@ client.query('create table if not exists admins( id serial primary key, fullName
         console.log(res)
     }
 });
+
+// create table for confirmation_token
+client.query('create table if not exists confirmation_tokens( id serial primary key, token varchar(255), email varchar(255))', (err, res) => {
+    if(err){
+        console.log(err.stack)
+    }
+    else{
+        console.log(res)
+    }
+});
     
 console.log("checkpoint 3");
 

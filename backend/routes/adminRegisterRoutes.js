@@ -1,4 +1,4 @@
-const {register, authenticateToken, login} = require('../controllers/authenticationController.js');
+const {register, authenticateToken, login, reset_password, change_password} = require('../controllers/authenticationController.js');
 
 async function handleRegisterRoutes(req, res) {
   // Handle request
@@ -19,6 +19,15 @@ async function handleRegisterRoutes(req, res) {
             return false;
         }
          // Indicate that the request was handled
+    } else if(req.url === '/api/reset_password' && req.method === 'POST') {
+        console.log("AAASDQ9DU0Q9DQW9EDQW90W90DUA0W9DU9A0AD");
+        console.log("received request to reset password", req.body);
+        reset_password(req, res)
+        return true;
+    } else if(req.url === '/api/reset' && req.method === 'POST') {
+        console.log("SERVER: received request on route /api/reset");
+        change_password(req, res);
+        return true;
     }
     else {
         return false; // Indicate that the request was not handled
