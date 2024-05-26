@@ -13,36 +13,37 @@
 </head>
 <body class="body">
     <main>
-    <div class="form-container">
-        <header id="form-container__form_title">Admin Register</header>
-        <form action="#" class="form-container__form">
-            <div class="form__input-box">
-                <label class="form__label" for="name">Full Name</label>
-                <input class="form__input" id="name" type="text" placeholder="Full Name" required>
-            </div>
-            <div class="form__input-box">
-                <label class="form__label" for="phone">Phone number</label>
-                <input class="form__input" id="phone" type="text" placeholder="Phone number" required>
-            </div>
-            <div class="form__input-box">
-                <label class="form__label" for="institute-code">Institute secret code</label>
-                <input class="form__input" id="institute-code" type="text" placeholder="xxxxxx" required>
-            </div>
-            <div class="form__input-box">
-                <label class="form__label" for="email">Email Address</label>
-                <input class="form__input" id="email" type="text" placeholder="username@mail.com" required>
-            </div>
-            <div class="form__input-box">
-                <label class="form__label" for="password">Password</label>
-                <input class="form__input" id="password" type="password" placeholder="Password" required>
-            </div>
-            <div class="form__submit">
-                <button class="form__submit-btn">
-                    Register
-                </button>
-            </div>
-        </form>
-    </div>
+        <div class="form-container">
+            <header id="form-container__form_title">Admin Register</header>
+            <form id="registerForm" class="form-container__form">
+                <div class="form__input-box">
+                    <label class="form__label" for="name">Full Name</label>
+                    <input class="form__input" id="name" type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form__input-box">
+                    <label class="form__label" for="phone">Phone number</label>
+                    <input class="form__input" id="phone" type="text" placeholder="Phone number" required>
+                </div>
+                <div class="form__input-box">
+                    <label class="form__label" for="institute-code">Institute secret code</label>
+                    <input class="form__input" id="institute-code" type="text" placeholder="xxxxxx" required>
+                </div>
+                <div class="form__input-box">
+                    <label class="form__label" for="email">Email Address</label>
+                    <input class="form__input" id="email" type="text" placeholder="username@mail.com" required>
+                </div>
+                <div class="form__input-box">
+                    <label class="form__label" for="password">Password</label>
+                    <input class="form__input" id="password" type="password" placeholder="Password" required>
+                </div>
+                <div class="form__submit">
+                    <button type="submit" class="form__submit-btn">
+                        Register
+                    </button>
+                </div>
+            </form>
+            
+        </div>
     </main>
     <div class="sidebar"></div>
 
@@ -50,5 +51,6 @@
     <script>
         
     </script>
+    <script src="./js/admin_register.js"></script>
 </body>
 </html>

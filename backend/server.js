@@ -14,6 +14,8 @@ client.query('SELECT NOW()', (err, res) => {
     }
 })
 
+console.log("checkpoint 1");
+
 //create the tables
 client.query('Create table if not exists visits ( id serial primary key, visitorName varchar(255), inmateName varchar(255), visitorEmail varchar(255), visitorPhone varchar(255), visitDate date, visitDuration varchar(255), natureOfVisit varchar(255), relationship varchar(255))' , (err, res) => {
     if(err){
@@ -22,6 +24,8 @@ client.query('Create table if not exists visits ( id serial primary key, visitor
         console.log(res)
     }
 });
+
+console.log("checkpoint 2");
 
 client.query('create table if not exists inmates( id serial primary key, name varchar(255), CNP varchar(255), convictedFor varchar(255), sentence varchar(255), entryDate date, releaseDate date, birthDate date, gender varchar(255) ,goods varchar(255), others varchar(255))', (err, res) => {
     if(err){
@@ -40,13 +44,15 @@ client.query('create table if not exists admins( id serial primary key, fullName
     }
 });
     
-
+console.log("checkpoint 3");
 
 const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Credentials', true);
+
+    console.log("checkpoint 4");
 
     // Handle OPTIONS method
     if (req.method === 'OPTIONS') {
@@ -66,5 +72,5 @@ const server = http.createServer((req, res) => {
 })
 
 const PORT = process.env.PORT || 5000
-
+console.log("checkpoint 5");
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

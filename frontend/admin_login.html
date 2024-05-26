@@ -12,23 +12,24 @@
     <main>
         <div class="form-container">
             <header id="form-container__form_title">Login</header>
-            <form action="#" class="form-container__form">
-            <div class="form__input-box">
-                <label class="form__label" for="email">Email Address</label>
-                <input class="form__input" id="email" type="text" placeholder="username@mail.com" required>
-            </div>
-            <div class="form__input-box">
-                <label class="form__label" for="password">Password</label>
-                <input class="form__input" id="password" type="password" placeholder="Password" required>
-            </div>
-            <div class="form__submit">
-                <button class="form__submit-btn">
-                    Login
-                </button>
-            </div>
-        </form>
-    </div>
+            <form id="loginForm" class="form-container__form">
+                <div class="form__input-box">
+                    <label class="form__label" for="email">Email Address</label>
+                    <input class="form__input" id="email" type="text" placeholder="username@mail.com" required>
+                </div>
+                <div class="form__input-box">
+                    <label class="form__label" for="password">Password</label>
+                    <input class="form__input" id="password" type="password" placeholder="Password" required>
+                </div>
+                <div class="form__submit">
+                    <button type="submit" class="form__submit-btn">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
     </main>
     <script src="./js/sidebar.js"></script>
+    <script src="./js/admin_login.js"></script>
 </body>
 </html>

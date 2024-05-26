@@ -2,6 +2,8 @@ const {register, authenticateToken, login} = require('../controllers/authenticat
 
 async function handleRegisterRoutes(req, res) {
   // Handle request
+  // print route and method for debug
+    console.log(req.url, req.method);
     if(req.url === '/api/register' && req.method === 'POST') {
         register(req, res)
         return true; // Indicate that the request was handled
