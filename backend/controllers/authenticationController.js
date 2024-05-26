@@ -47,6 +47,46 @@ async function register(req, res){
     
 }
 
+async function login(req, res){
+    let body = '';
+    req.on('data', chunk => {
+        body += chunk.toString(); // convert Buffer to string
+    });
+    req.on('end', async () => {
+        console.log("1");
+       
+          //trim data from body
+          
+        console.log("2");
+        try{
+            const {email, password} = JSON.parse(body)
+            console.log(email, password)
+        
+
+            const result = await client.query("SELECT * FROM admins WHERE email = $1", [email]);       
+            if(result.rows.length === 0){
+                res.writeHead(400, {'Content-Type': 'application/json'})
+                return res.end(JSON.stringify({message: 'Admin does not exist'}))
+            }
+            console.log("4");
+            const admin = result.rows[0]
+            const isMatch = await bcrypt.compare(password, admin.password)
+            console.log("5");
+            if(isMatch){
+                const token = jwt.sign({email}, process.env.JWT_SECRET, {expiresIn: '1h'})
+                res.writeHead(200, {'Content-Type': 'application/json'})
+                return res.end(JSON.stringify({message: 'Login successful', token}))
+            } else {
+                res.writeHead(400, {'Content-Type': 'application/json'})
+                return res.end(JSON.stringify({message: 'Invalid credentials'}))
+            }
+        } catch(error){
+            res.writeHead(500, {'Content-Type': 'application/json'})
+            return res.end(JSON.stringify({error: error.message}))
+        }
+    });
+}
+
 
 async function authenticateToken(req, res) {
     const authHeader = req.headers['authorization']
@@ -71,5 +111,6 @@ async function authenticateToken(req, res) {
 
 module.exports = {
     register,
-    authenticateToken
+    authenticateToken,
+    login
 };

@@ -1,10 +1,13 @@
-const {register, authenticateToken} = require('../controllers/authenticationController.js');
+const {register, authenticateToken, login} = require('../controllers/authenticationController.js');
 
 async function handleRegisterRoutes(req, res) {
   // Handle request
     if(req.url === '/api/register' && req.method === 'POST') {
         register(req, res)
         return true; // Indicate that the request was handled
+    } else if(req.url === '/api/login' && req.method === 'POST'){
+        login(req, res)
+        return true;
     } else if(req.url === '/protected' && req.method === 'GET') {
         const isAuthenticated = await authenticateToken(req, res);
         if(isAuthenticated) {
