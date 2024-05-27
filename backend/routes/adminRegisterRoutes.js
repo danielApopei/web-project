@@ -20,7 +20,6 @@ async function handleRegisterRoutes(req, res) {
         }
          // Indicate that the request was handled
     } else if(req.url === '/api/reset_password' && req.method === 'POST') {
-        console.log("AAASDQ9DU0Q9DQW9EDQW90W90DUA0W9DU9A0AD");
         console.log("received request to reset password", req.body);
         reset_password(req, res)
         return true;

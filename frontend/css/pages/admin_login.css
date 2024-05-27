@@ -22,3 +22,29 @@ main{
     align-items: center;
     width: 50%;
 }
+
+.form__reset-btn{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    
+    max-width:20rem;
+    max-height: 20rem;
+    width: 12rem;
+}
+
+.form__reset-btn a{
+    color:#eee;
+
+}
+
+.form__submit{
+    flex-direction: column;
+}
+
+@media screen and (min-width: 540px) {
+    .form__submit{
+        flex-direction: row;
+    }
+    
+}

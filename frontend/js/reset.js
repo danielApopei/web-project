@@ -20,7 +20,9 @@ document.getElementById('reset-form').addEventListener('submit', function(event)
     .then(response => response.json())
     .then(data => {
         // Handle response
-        alert("ok!");
+        alert("Your password has been changed succesfully!");
+        // Redirect to login page
+        window.location.href = "http://localhost:5501/admin_login.html";
     })
     .catch((error) => {
         console.error('Error:', error);

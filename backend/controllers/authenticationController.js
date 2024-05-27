@@ -169,6 +169,7 @@ async function reset_password(req, res) {
             await sendResetEmail(email);
 
             res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.writeHead(302, { 'Location': '/admin_login.html' });
             return res.end(JSON.stringify({ message: 'A reset link has been sent to your email address' }));
         } catch (error) {
             res.writeHead(500, { 'Content-Type': 'application/json' });
