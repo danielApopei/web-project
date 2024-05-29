@@ -34,6 +34,7 @@ form.addEventListener('submit', function(event) {
     .then(data => {
         console.log(data)
         alert('Visit scheduled successfully!');
+        window.location.href = "http://localhost:5501/index.html";
     })
     .catch(error => console.log('Error: ', error)
     )

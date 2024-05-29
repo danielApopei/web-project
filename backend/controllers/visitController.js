@@ -1,4 +1,5 @@
 const Visit = require('../models/visitModel');
+const nodemailer = require('nodemailer');
 
 const { getVisitData } = require('../utils/utils')
 
@@ -32,6 +33,30 @@ async function createVisit(req, res){
             natureOfVisit,
             relationship
         }
+
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.EMAIL_PASSWORD
+            }
+        });
+
+        const mailOptions = {
+            from: process.env.EMAIL,
+            to: visitorEmail,
+            subject: 'Inmate Visit Confirmation',
+            text: `Hello!\n\nYou have a new visit scheduled for ${visitDate} with ${inmateName}.\n\nPlease let us know if you have any questions or need to reschedule.\n\nThank you!`
+        };
+    
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+
 
         const newVisit = await Visit.create(visit)
         res.writeHead(201, {'Content-Type': 'application/json'}) // 201 means something was created
