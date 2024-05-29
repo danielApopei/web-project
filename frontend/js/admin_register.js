@@ -20,9 +20,9 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     if (response.ok) {
         alert('Registration successful');
         // You can also save the token to localStorage or sessionStorage if needed
-        // localStorage.setItem('token', data.token);
+        localStorage.setItem('token', data.token);
         // Redirect to a login page or dashboard
-        window.location.href = '/login.html'; // Replace with your login page or dashboard
+        window.location.href = '/admin_login.html'; // Replace with your login page or dashboard
     } else {
         alert(data.message || 'Registration failed');
     }
