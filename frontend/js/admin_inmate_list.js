@@ -56,14 +56,33 @@ function setupStuff() {
     inmateGrid = document.getElementById("inmate-grid");
     searchBox = document.getElementById("search-box");
 
-    fetch('http://localhost:5000/api/inmates')
-        .then(response => response.json())
+    // check localStorage for token. if nonexistent, redirect to admin_login.html
+    if(!localStorage.getItem('token')) {
+        window.location.href = 'admin_login.html';
+    }
+    
+
+    fetch('http://localhost:5000/api/inmates', {
+        headers:{
+            'authorization': localStorage.getItem('token')
+        }
+    
+    })
+        .then(response => {
+            console.log("response status: ", response.status);
+            if(response.status === 401) {
+                window.location.href = 'admin_login.html';
+                throw new Error('Unauthorized');
+            }
+            return response.json();
+        })
         .then(data => {
             inmateList = data.map(item => item.name);
             filteredList = inmateList;
             loadInmateList();
             setupSearchBox();
-        });
+        })
+        .catch(error => console.error('Error:', error));
 }
 
 document.addEventListener("readystatechange", setupStuff);

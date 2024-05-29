@@ -1,5 +1,13 @@
 const form = document.getElementById('registerInmateForm');
 
+// get token from localStorage
+const token = localStorage.getItem('token');
+
+// if not existent, redirect to login
+if (!token) {
+    window.location.href = 'admin_login.html';
+}
+
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 

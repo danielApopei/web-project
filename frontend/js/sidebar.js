@@ -70,7 +70,7 @@ function main() {
         <span class="tooltip">Sign in</span>
     </li>
     <li>
-        <a href="./index.html">
+        <a href="./index.html" id="logout-btn">
             <i class="bx bx-log-out" style='color:#86c2f2'></i>
             <span class="nav-item">Logout</span>
         </a>
@@ -79,10 +79,17 @@ function main() {
 </ul>`;
 let btn = document.querySelector('#btn');
 
-btn.onclick = function(){
-    sidebar.classList.toggle('active');
-    console.log("Button pressed");
-};
+    btn.onclick = function(){
+        sidebar.classList.toggle('active');
+        console.log("Button pressed");
+    };
+
+    const logoutButton = document.getElementById('logout-btn');
+    logoutButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        localStorage.removeItem('token');
+        window.location.href = 'index.html';
+    });
 }
 
 document.addEventListener("readystatechange", main);

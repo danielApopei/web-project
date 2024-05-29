@@ -1,9 +1,19 @@
 const Visit = require('../models/visitModel');
 const nodemailer = require('nodemailer');
 
-const { getVisitData } = require('../utils/utils')
+const { getVisitData } = require('../utils/utils');
+const { authenticateToken } = require('./authenticationController');
 
 async function getVisits(req, res){
+    // see if req has a toke
+    console.log("here1");
+    const token = req.headers['authorization'];
+    console.log("token1: ", token);
+    const isAuthenticated = await authenticateToken(req, res);
+    if(!isAuthenticated){
+        res.writeHead(401, {'Content-Type': 'application/json'})
+        return res.end(JSON.stringify({message: 'Unauthorized'}))
+    }
     try{
         const visits = await Visit.findAll()
 

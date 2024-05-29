@@ -62,9 +62,26 @@
 
 // document.addEventListener("readystatechange", setupStuff);
 
+// get token from localStorage
+const token = localStorage.getItem('token');
 
-fetch('http://localhost:5000/api/visits')
-    .then(response => response.json())
+// if token is not there, redirect to login
+if (!token) {
+    window.location.href = 'admin_login.html';
+}
+
+fetch('http://localhost:5000/api/visits', {
+        headers:{
+            'authorization': localStorage.getItem('token')
+        }
+})
+    .then(response => {
+        if(response.status === 401) {
+            window.location.href = 'admin_login.html';
+            throw new Error('Unauthorized');
+        }
+        return response.json();
+    })
     .then(data => {
         // Get the table body
         const tbody = document.getElementById('list-section').getElementsByTagName('tbody')[0];

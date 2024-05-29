@@ -126,8 +126,8 @@ async function sendResetEmail(email) {
 
 async function authenticateToken(req, res) {
     const authHeader = req.headers['authorization']
-    const token = authHeader && authHeader.split(' ')[1]
-  
+    const token = authHeader && authHeader.split(' ')[0]
+    console.log("token2: ", token);
     if (token == null) {
       res.writeHead(401);
       return res.end('Unauthorized');

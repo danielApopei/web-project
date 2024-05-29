@@ -17,7 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     if (response.ok) {
         alert('Login successful');
         // You can also save the token to localStorage or sessionStorage if needed
-        // localStorage.setItem('token', data.token);
+        localStorage.setItem('token', data.token);
         // Redirect to a protected page or dashboard
         window.location.href = '/admin_inmate_list.html'; // Replace with your protected page
     } else {

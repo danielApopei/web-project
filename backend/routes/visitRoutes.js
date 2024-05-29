@@ -1,6 +1,8 @@
 const {getVisits, createVisit, deleteVisit, updateVisit} = require('../controllers/visitController');
 
 function handleVisitRequest(req, res) {
+    console.log("here2");
+    res.setHeader('Access-Control-Allow-Origin', '*');
     if(req.url === '/api/visits' && req.method === 'GET') {
         getVisits(req, res)
     } else if(req.url === '/api/visits' && req.method === 'POST') {

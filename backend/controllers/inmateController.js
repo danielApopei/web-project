@@ -1,8 +1,15 @@
 const Inmate = require('../models/inmateModel');
+const {authenticateToken} = require('./authenticationController');
 
 const { getInmateData } = require('../utils/utils')
 
 async function getInmates(req, res){
+    const token = req.headers['authorization'];
+    const isAuthenticated = await authenticateToken(req, res);
+    if(!isAuthenticated){
+        res.writeHead(401, {'Content-Type': 'application/json'})
+        return res.end(JSON.stringify({message: 'Unauthorized'}))
+    }
     try{
         const inmates = await Inmate.findAll()
 
@@ -16,6 +23,13 @@ async function getInmates(req, res){
 async function createInmate(req, res){
     try{
         
+        const token = req.headers['authorization'];
+        const isAuthenticated = await authenticateToken(req, res);
+        if(!isAuthenticated){
+            res.writeHead(401, {'Content-Type': 'application/json'})
+            return res.end(JSON.stringify({message: 'Unauthorized'}))
+        }
+
         //get data from body
         const body = await getInmateData(req)
 
