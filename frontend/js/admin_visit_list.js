@@ -113,6 +113,14 @@ fetch('http://localhost:5000/api/visits', {
             visitTimeCell.textContent = item.visitduration;
             row.appendChild(visitTimeCell);
 
+            const linkToVisit = document.createElement('td');
+            linkToVisit.className = 'list-item__visit-link';
+            const link = document.createElement('a');
+            link.href = `visit_info.html?id=${item.id}`;
+            link.textContent = 'View';
+            linkToVisit.appendChild(link);
+            row.appendChild(linkToVisit);
+
             // Append the row to the table body
             tbody.appendChild(row);
         });

@@ -36,9 +36,12 @@ function findById(id){
 
 function create(visit){
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO visits ( visitorName, inmateName, visitorEmail, visitorPhone, visitDate, visitDuration, natureOfVisit, relationship) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)';
+        const query = 'INSERT INTO visits ( visitorName, inmateName, visitorEmail, visitorPhone, visitDate, visitDuration, natureOfVisit, relationship, complete, starting_time, end_time, transcript) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)';
         const newVisit = { ...visit};
-        const values = [newVisit.visitorName, newVisit.inmateName, newVisit.visitorEmail, newVisit.visitorPhone, newVisit.visitDate, newVisit.visitDuration, newVisit.natureOfVisit, newVisit.relationship];
+        // convert starting_date and end_date to timestamp for postgresql
+        newVisit.starting_time = new Date(newVisit.starting_time).toISOString();
+        newVisit.end_time = new Date(newVisit.end_time).toISOString();
+        const values = [newVisit.visitorName, newVisit.inmateName, newVisit.visitorEmail, newVisit.visitorPhone, newVisit.visitDate, newVisit.visitDuration, newVisit.natureOfVisit, newVisit.relationship, newVisit.complete, newVisit.starting_time, newVisit.end_time, newVisit.transcript];
         client.query(query, values, (err, res) => {
             if(err){
                 console.log(err.stack)

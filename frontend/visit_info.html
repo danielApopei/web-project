@@ -11,29 +11,34 @@
 
 <body>
     <main>
-        <div class="visit-wrapper">
+        <div class="visit-section" id="search-section">
+            <h2>Search for ID to view Visit</h2>
+            <input type="text" id="inmate-input" placeholder="Enter inmate name">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="visit-wrapper" id="visit-wrapper">
             <div class="visit-section" id="title-section">
                 <h2>Visit Info</h2>
                 <table class="visit-section__table">
                     <tr class="visit-section__tr">
                         <th class="visit-section__th">Visit ID</th>
-                        <td class="visit-section__td">#9283</td>
+                        <td class="visit-section__td" id="id">#9283</td>
                     </tr>
                     <tr class="visit-section__tr">
                         <th class="visit-section__th">Inmate Name</th>
-                        <td class="visit-section__td">James Wilkinson</td>
+                        <td class="visit-section__td" id="inmateName">James Wilkinson</td>
                     </tr>
                     <tr class="visit-section__tr">
                         <th class="visit-section__th">Visitor Name</th>
-                        <td class="visit-section__td">Pamela Anderson</td>
+                        <td class="visit-section__td" id="visitorName">Pamela Anderson</td>
                     </tr>
                     <tr class="visit-section__tr">
                         <th class="visit-section__th">Planned Time</th>
-                        <td class="visit-section__td">12:00 - 13:00</td>
+                        <td class="visit-section__td" id="visitDuration">12:00 - 13:00</td>
                     </tr>
                     <tr class="visit-section__tr">
                         <th class="visit-section__th">Nature of Visit</th>
-                        <td class="visit-section__td">Lawyer</td>
+                        <td class="visit-section__td" id="natureOfVisit">Lawyer</td>
                     </tr>
                 </table>
             </div>
@@ -42,15 +47,19 @@
                 <table class="visit-section__table">
                     <tr class="visit-section__tr">
                         <th class="visit-section__th">Status</th>
-                        <td class="visit-section__td visit-section__table--complete">Complete</td>
+                        <td class="visit-section__td visit-section__table--complete" id="complete">Complete</td>
                     </tr>
                     <tr class="visit-section__tr">
-                        <th class="visit-section__th">Actual Time</th>
-                        <td class="visit-section__td">12:01 - 12:36</td>
+                        <th class="visit-section__th">Start Time</th>
+                        <td class="visit-section__td" id="starting_time">12:01 - 12:36</td>
+                    </tr>
+                    <tr class="visit-section__tr">
+                        <th class="visit-section__th">End Time</th>
+                        <td class="visit-section__td" id="end_time">12:01 - 12:36</td>
                     </tr>
                     <tr class="visit-section__tr">
                         <th class="visit-section__th">Transcript</th>
-                        <td class="visit-section__td visit-section__table--unavailable">not uploaded</td>
+                        <td class="visit-section__td visit-section__table--unavailable" id="transcript">not uploaded</td>
                     </tr>
                 </table>
             </div>
@@ -69,6 +78,7 @@
         </div>
     </main>
     <script src="./js/sidebar.js"></script>
+    <script src="./js/visit_info.js"></script>
 </body>
 
 </html>

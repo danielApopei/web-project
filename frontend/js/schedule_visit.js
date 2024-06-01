@@ -21,7 +21,11 @@ form.addEventListener('submit', function(event) {
         visitDate: visitDate,
         visitDuration: visitDuration,
         natureOfVisit: natureOfVisit,
-        relationship: relationship
+        relationship: relationship,
+        complete: "Pending",
+        starting_time: null,
+        end_time: null,
+        transcript: ""
     };
 
     fetch('http://localhost:5000/api/visits', {

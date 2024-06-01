@@ -20,7 +20,7 @@ function main() {
         sidebar.innerHTML = `<div class="top">
     <div class="logo">
         <i class='bx bx-barcode'></i>
-        <span>Visit Admin App</span>
+        <a href="./index.html">Detention Admin</a>
     </div>
     <i class="bx bx-menu" id="btn"></i>
 </div>
@@ -47,6 +47,13 @@ function main() {
         <span class="tooltip">Plan a visit</span>
     </li>
     <li>
+        <a href="./visit_info.html">
+            <i class='bx bx-info-circle' style='color:#86c2f2'></i>
+            <span class="nav-item">Visit Info</span>
+        </a>
+        <span class="tooltip">Visit Info</span>
+    </li>
+    <li>
         <a href="./admin_visit_list.html">
             <i class='bx bx-list-ul' style='color:#86c2f2'></i>
             <span class="nav-item">Visits list</span>
@@ -68,13 +75,6 @@ function main() {
         <span class="tooltip">Prisoners</span>
     </li>
     <li>
-        <a href="./admin_register.html">
-            <i class="bx bxs-registered" style='color:#86c2f2' ></i>
-            <span class="nav-item">Create admin account</span>
-        </a>
-        <span class="tooltip">Sign in</span>
-    </li>
-    <li>
         <a href="./index.html" id="logout-btn">
             <i class="bx bx-log-out" style='color:#86c2f2'></i>
             <span class="nav-item">Logout</span>
@@ -84,10 +84,10 @@ function main() {
 </ul>`;
     } else {
         sidebar.innerHTML = `<div class="top">
-    <div class="logo">
-        <i class='bx bx-barcode'></i>
-        <span>Visit Admin App</span>
-    </div>
+        <div class="logo">
+            <i class='bx bx-barcode'></i>
+            <a href="./index.html">Detention Admin</a>
+        </div>
     <i class="bx bx-menu" id="btn"></i>
 </div>
 <ul>
@@ -97,6 +97,13 @@ function main() {
             <span class="nav-item">Plan a visit</span>
         </a>
         <span class="tooltip">Plan a visit</span>
+    </li>
+    <li>
+        <a href="./visit_info.html">
+            <i class='bx bx-info-circle' style='color:#86c2f2'></i>
+            <span class="nav-item">Visit Info</span>
+        </a>
+        <span class="tooltip">Visit Info</span>
     </li>
     <li>
         <a href="./admin_login.html">

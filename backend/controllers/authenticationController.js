@@ -156,20 +156,25 @@ async function reset_password(req, res) {
         try {
             const result = await client.query("SELECT * FROM admins WHERE email = $1", [email]);       
             if(result.rows.length === 0){
+                console.log("if1");
                 res.writeHead(400, {'Content-Type': 'application/json'})
+                console.log("if1-1");
                 return res.end(JSON.stringify({message: 'Admin does not exist'}))
             }
+            console.log("after if1");
             admin = result.rows.length;
 
             if (!admin) {
+                console.log("if2");
                 res.writeHead(400, { 'Content-Type': 'application/json' });
                 return res.end(JSON.stringify({ message: 'User not found' }));
             }
-
+            console.log("after if2");
             await sendResetEmail(email);
-
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.writeHead(302, { 'Location': '/admin_login.html' });
+            console.log("after sendResetEmail");
+            console.log("after writeHead");
+            res.writeHead(200, { 'Location': '/admin_login.html' }); // here error
+            console.log("after writeHead2");
             return res.end(JSON.stringify({ message: 'A reset link has been sent to your email address' }));
         } catch (error) {
             res.writeHead(500, { 'Content-Type': 'application/json' });

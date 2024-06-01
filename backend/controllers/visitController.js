@@ -5,7 +5,7 @@ const { getVisitData } = require('../utils/utils');
 const { authenticateToken } = require('./authenticationController');
 
 async function getVisits(req, res){
-    // see if req has a toke
+    // see if req has a token
     console.log("here1");
     const token = req.headers['authorization'];
     console.log("token1: ", token);
@@ -17,6 +17,18 @@ async function getVisits(req, res){
     try{
         const visits = await Visit.findAll()
 
+        res.writeHead(200, {'Content-Type': 'application/json'})
+        return res.end(JSON.stringify(visits))
+    } catch(error){
+        console.log(error)
+    }
+}
+
+async function getVisit(req, res, id){
+    console.log("in getVisit");
+    try{
+        const visits = await Visit.findById(id);
+        console.log("visits: ", visits);
         res.writeHead(200, {'Content-Type': 'application/json'})
         res.end(JSON.stringify(visits))
     } catch(error){
@@ -31,7 +43,7 @@ async function createVisit(req, res){
         const body = await getVisitData(req)
 
         //trim data from body
-        const { visitorName, inmateName, visitorEmail, visitorPhone, visitDate, visitDuration, natureOfVisit, relationship} = JSON.parse(body)
+        const { visitorName, inmateName, visitorEmail, visitorPhone, visitDate, visitDuration, natureOfVisit, relationship, complete, starting_time, end_time, transcript} = JSON.parse(body)
 
         const visit = {
             visitorName, 
@@ -41,7 +53,11 @@ async function createVisit(req, res){
             visitDate, 
             visitDuration, 
             natureOfVisit,
-            relationship
+            relationship,
+            complete,
+            starting_time,
+            end_time,
+            transcript
         }
 
         const transporter = nodemailer.createTransport({
@@ -131,6 +147,7 @@ async function updateVisit(req, res, id){
 
 module.exports = {
     getVisits,
+    getVisit,
     createVisit,
     deleteVisit,
     updateVisit
