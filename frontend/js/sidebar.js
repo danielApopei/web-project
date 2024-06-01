@@ -12,7 +12,12 @@ function main() {
         let mymain = document.getElementsByTagName("main")[0];
         mymain.appendChild(sidebar);
     } else sidebar = sidebar[0];
-    sidebar.innerHTML = `<div class="top">
+
+    // get token from localStorage
+    const token = localStorage.getItem('token');
+    // if token is not present, redirect to login page
+    if(token) {
+        sidebar.innerHTML = `<div class="top">
     <div class="logo">
         <i class='bx bx-barcode'></i>
         <span>Visit Admin App</span>
@@ -27,6 +32,13 @@ function main() {
     </div>
 </div>
 <ul>
+    <li>
+        <a href="./admin_dashboard.html">
+            <i class='bx bx-list-ul' style='color:#86c2f2'></i>
+            <span class="nav-item">Admin Dashboard</span>
+        </a>
+        <span class="tooltip">Admin Dashboard</span>
+    </li>
     <li>
         <a href="./register_visit.html">
             <i class='bx bxs-pencil' style='color:#86c2f2'></i>
@@ -56,13 +68,6 @@ function main() {
         <span class="tooltip">Prisoners</span>
     </li>
     <li>
-        <a href="./admin_login.html">
-            <i class='bx bx-log-in' style='color:#86c2f2'></i>
-            <span class="nav-item">LogIn</span>
-        </a>
-        <span class="tooltip">LogIn</span>
-    </li>
-    <li>
         <a href="./admin_register.html">
             <i class="bx bxs-registered" style='color:#86c2f2' ></i>
             <span class="nav-item">Create admin account</span>
@@ -77,6 +82,39 @@ function main() {
         <span class="tooltip">Logout</span>
     </li>
 </ul>`;
+    } else {
+        sidebar.innerHTML = `<div class="top">
+    <div class="logo">
+        <i class='bx bx-barcode'></i>
+        <span>Visit Admin App</span>
+    </div>
+    <i class="bx bx-menu" id="btn"></i>
+</div>
+<ul>
+    <li>
+        <a href="./register_visit.html">
+            <i class='bx bxs-pencil' style='color:#86c2f2'></i>
+            <span class="nav-item">Plan a visit</span>
+        </a>
+        <span class="tooltip">Plan a visit</span>
+    </li>
+    <li>
+        <a href="./admin_login.html">
+            <i class='bx bx-log-in' style='color:#86c2f2'></i>
+            <span class="nav-item">LogIn</span>
+        </a>
+        <span class="tooltip">Login</span>
+    </li>
+    <li>
+        <a href="./admin_register.html">
+            <i class="bx bxs-registered" style='color:#86c2f2' ></i>
+            <span class="nav-item">Create admin account</span>
+        </a>
+        <span class="tooltip">Register</span>
+    </li>
+</ul>`;
+    }
+    
 let btn = document.querySelector('#btn');
 
     btn.onclick = function(){

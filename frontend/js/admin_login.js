@@ -19,8 +19,15 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         // You can also save the token to localStorage or sessionStorage if needed
         localStorage.setItem('token', data.token);
         // Redirect to a protected page or dashboard
-        window.location.href = '/admin_inmate_list.html'; // Replace with your protected page
+        window.location.href = '/admin_dashboard.html'; // Replace with your protected page
     } else {
         alert(data.message || 'Login failed');
+    }
+});
+
+document.addEventListener("readystatechange", async function() {
+    // check localStorage for token. if nonexistent, redirect to admin_login.html
+    if(localStorage.getItem('token')) {
+        window.location.href = '/admin_dashboard.html';
     }
 });
