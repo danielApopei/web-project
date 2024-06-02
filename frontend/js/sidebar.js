@@ -17,6 +17,9 @@ function main() {
     const token = localStorage.getItem('token');
     // if token is not present, redirect to login page
     if(token) {
+        // first get the name of the admin currently connected
+        const name = localStorage.getItem('name');
+
         sidebar.innerHTML = `<div class="top">
     <div class="logo">
         <i class='bx bx-barcode'></i>
@@ -27,7 +30,7 @@ function main() {
 <div class="user">
     <img src="img/img.png" alt="eu" class="user-img">
     <div>
-        <p class="bold">Andrei O.</p>
+        <p class="bold">${name}</p>
         <p>Admin</p>
     </div>
 </div>
@@ -133,6 +136,7 @@ let btn = document.querySelector('#btn');
     logoutButton.addEventListener('click', function(event) {
         event.preventDefault();
         localStorage.removeItem('token');
+        localStorage.removeItem('name');
         window.location.href = 'index.html';
     });
 }

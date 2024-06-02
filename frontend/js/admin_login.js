@@ -18,6 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         alert('Login successful');
         // You can also save the token to localStorage or sessionStorage if needed
         localStorage.setItem('token', data.token);
+        localStorage.setItem('name', data.name);
         // Redirect to a protected page or dashboard
         window.location.href = '/admin_dashboard.html'; // Replace with your protected page
     } else {

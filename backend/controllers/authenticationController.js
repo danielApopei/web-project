@@ -76,7 +76,7 @@ async function login(req, res){
             if(isMatch){
                 const token = jwt.sign({email}, process.env.JWT_SECRET, {expiresIn: '1h'})
                 res.writeHead(200, {'Content-Type': 'application/json'})
-                return res.end(JSON.stringify({message: 'Login successful', token}))
+                return res.end(JSON.stringify({message: 'Login successful', token, name: admin.fullname, email: admin.email, phonenumber: admin.phonenumber, institutesecretcode: admin.institutesecretcode}))
             } else {
                 res.writeHead(400, {'Content-Type': 'application/json'})
                 return res.end(JSON.stringify({message: 'Invalid credentials'}))
