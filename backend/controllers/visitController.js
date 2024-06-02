@@ -9,16 +9,18 @@ async function getVisits(req, res){
     console.log("here1");
     const token = req.headers['authorization'];
     console.log("token1: ", token);
-    const isAuthenticated = await authenticateToken(req, res);
-    if(!isAuthenticated){
-        res.writeHead(401, {'Content-Type': 'application/json'})
-        return res.end(JSON.stringify({message: 'Unauthorized'}))
+    const req2 = req;
+    const res2 = res;
+    const isAuthenticated = await authenticateToken(req2, res2);
+    let status = 401;
+    let content = "unauthorized";
+    if (isAuthenticated) {
+        status = 200;
+        content = await Visit.findAll();
     }
     try{
-        const visits = await Visit.findAll()
-
-        res.writeHead(200, {'Content-Type': 'application/json'})
-        return res.end(JSON.stringify(visits))
+        res.writeHead(status, {'Content-Type': 'application/json'})
+        return res.end(JSON.stringify(content))
     } catch(error){
         console.log(error)
     }
@@ -60,6 +62,15 @@ async function createVisit(req, res){
             transcript
         }
 
+        // get the highest id of database and store it in visitId
+        const visits = await Visit.findAll();
+        let visitId = 0;
+        for (let i = 0; i < visits.length; i++) {
+            if (visits[i].id > visitId) {
+                visitId = visits[i].id;
+            }
+        }
+
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -72,7 +83,22 @@ async function createVisit(req, res){
             from: process.env.EMAIL,
             to: visitorEmail,
             subject: 'Inmate Visit Confirmation',
-            text: `Hello!\n\nYou have a new visit scheduled for ${visitDate} with ${inmateName}.\n\nPlease let us know if you have any questions or need to reschedule.\n\nThank you!`
+            html: `
+            <main>
+            <div style="background-color: #DFF5FF; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #3270b8; text-align: center;">
+                <div style="background-color: #378CE7; color: #ffffff; padding: 10px 0;">
+                    <h1 style="font-size: 24px;">Detention Admin</h1>
+                </div>
+                <div style="padding: 20px;">
+                    <h2 style="font-size: 20px;">Visit Confirmation</h2>
+                    <p>You have a new visit scheduled for ${visitDate} with ${inmateName}.</p>
+                    <p>Your visit ID is ${visitId}.</p>
+                    <p>You can view info about your visit here: <a href="http://localhost:5501/visit_info.html?id=${visitId}">Visit Info</a></p>
+                    <p>Please let us know if you have any questions or need to reschedule.</p>
+                    <p>Thank you!</p>
+                </div>
+            </div>
+            </main>`
         };
     
         transporter.sendMail(mailOptions, function (error, info) {

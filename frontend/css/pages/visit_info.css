@@ -76,6 +76,18 @@ main{
     border-width: 0.01rem;
 }
 
+#inmate-input, #search-button {
+    padding: 0.8rem;
+    border: 2px solid var(--light-blue);
+    border-radius: 1rem;
+}
+#random-wrapper {
+    margin: 2rem;
+    gap:1rem;
+    display: flex;
+    justify-content: center;
+}
+
 /* TABLET */
 @media screen and (min-width: 700px) {
     #title-section, #status-section, #export-section {

@@ -107,10 +107,21 @@ async function sendResetEmail(email) {
         from: process.env.EMAIL,
         to: email,
         subject: 'Password Reset',
-        text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n
-         Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n
-         ${process.env.CLIENT_URL}/select_new_password.html?token=${token}\n\n
-         If you did not request this, please ignore this email and your password will remain unchanged.\n`
+        html: `
+        <main>
+        <div style="background-color: #DFF5FF; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #3270b8; text-align: center;">
+            <div style="background-color: #378CE7; color: #ffffff; padding: 10px 0;">
+                <h1 style="font-size: 24px;">Detention Admin</h1>
+            </div>
+            <div style="padding: 20px;">
+                <h2 style="font-size: 20px;">Reset Password Request</h2>
+                <p>Your have requested a new password.</p>
+                <p>Click here to choose a new password: <a href="http://${process.env.CLIENT_URL}/select_new_password.html?token=${token}">Reset Password</a></p>
+                <p>Or just paste this into your browser:<br>http://${process.env.CLIENT_URL}/select_new_password.html?token=${token}</p>
+                <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>
+            </div>
+        </div>
+        </main>`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
