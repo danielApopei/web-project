@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components/form_components.css">
     <link rel="stylesheet" href="css/pages/register_visit.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- Add the Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 </head>
 
 <body class="body">
@@ -25,8 +30,18 @@
                     <input class="form__input" type="text" placeholder="John Doe" id="visitorName" required>
                 </div>
                 <div class="form__input-box">
+                    <label class="form__label">Visitor Image</label>
+                    <input class="form__input" type="file" placeholder="John Doe" id="visitorImage" required>
+                </div>
+            </div>
+            <div class="form__column">
+                <div class="form__input-box">
                     <label class="form__label">Inmate Full Name</label>
                     <input class="form__input" type="text" placeholder="John Doe" id="inmateName" required>
+                </div>
+                <div class="form__input-box">
+                    <label class="form__label">Inmate Image</label>
+                    <input class="form__input" type="file" placeholder="John Doe" id="inmateImage" required>
                 </div>
             </div>
             <div class="form__column">

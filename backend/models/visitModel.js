@@ -34,6 +34,24 @@ function findById(id){
     })
 }
 
+function findHighestId(){
+    return new Promise((resolve, reject) => {
+        const query = 'SELECT MAX(id) FROM visits';
+        client.query(query,
+            (err, res) => {
+                if(err){
+                    console.log(err.stack)
+                } else {
+                    console.log(res);
+                    console.log('found highest id: ', res.rows[0].max);
+                    resolve(res.rows[0].max);
+                }
+            
+            });
+    });
+}
+
+
 function create(visit){
     return new Promise((resolve, reject) => {
         const query = 'INSERT INTO visits ( visitorName, inmateName, visitorEmail, visitorPhone, visitDate, visitDuration, natureOfVisit, relationship, complete, starting_time, end_time, transcript) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)';
@@ -90,5 +108,6 @@ module.exports = {
     create,
     remove,
     findById,
-    update
+    update,
+    findHighestId
 }

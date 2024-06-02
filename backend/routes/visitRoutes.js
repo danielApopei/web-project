@@ -1,4 +1,4 @@
-const {getVisits, getVisit, createVisit, deleteVisit, updateVisit} = require('../controllers/visitController');
+const {getVisits, getVisit, createVisit, deleteVisit, updateVisit, findHighestId} = require('../controllers/visitController');
 
 function handleVisitRequest(req, res) {
     console.log("here22222");
@@ -17,7 +17,11 @@ function handleVisitRequest(req, res) {
     else if(req.url.match(/\/api\/visit\?id=([0-9]+)/) && req.method === 'GET') {
         const id = req.url.split('=')[1];
         getVisit(req, res, id);
-    }else {
+    } else if(req.url === '/high' && req.method === 'GET') {
+        console.log("received request to find highest id");
+        findHighestId(req, res);
+        
+    } else {
         console.log("handleVisitRequest: Request not handled");
         return false; // Indicate that the request was not handled
     }

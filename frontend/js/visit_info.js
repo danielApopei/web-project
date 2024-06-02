@@ -93,10 +93,29 @@ document.getElementById('search-button').addEventListener('click', function() {
             let end_timeElement = document.getElementById('end_time');
             let transcriptElement = document.getElementById('transcript');
             let idElement = document.getElementById('id');
+            let inmatePhotoTD = document.getElementById('inmatePhoto');
+            let visitorPhotoTD = document.getElementById('visitorPhoto');
+            // clear the innerHTML of the elements
+            inmatePhotoTD.innerHTML = '';
+            visitorPhotoTD.innerHTML = '';
 
             idElement.innerHTML = '#' + id;
             visitorNameElement.innerHTML = visitorname;
             inmateNameElement.innerHTML = inmatename;
+            // create new img with src = 'https://firebasestorage.googleapis.com/v0/b/web-project-116cd.appspot.com/o/visits%2F' + id + '_inmateImage?alt=media&token=a21907ce-bfa8-4212-a422-8461dc87b272'
+            // create new element img
+            inmatePhoto = document.createElement('img');
+            // set width to 2rem
+            inmatePhoto.style.width = '10rem';
+            inmatePhoto.src = 'https://firebasestorage.googleapis.com/v0/b/web-project-116cd.appspot.com/o/visits%2F' + id + '_inmateImage?alt=media&token=a21907ce-bfa8-4212-a422-8461dc87b272';
+            // create new element img
+            visitorPhoto = document.createElement('img');
+            // set width to occupy all of the td
+            visitorPhoto.style.width = '10rem';
+            visitorPhoto.src = 'https://firebasestorage.googleapis.com/v0/b/web-project-116cd.appspot.com/o/visits%2F' + id + '_visitorImage?alt=media&token=1f2f7c3e-6c3c-4f9d-8a4b-9b3f8a6e8e6d';
+            // append img to td
+            inmatePhotoTD.appendChild(inmatePhoto);
+            visitorPhotoTD.appendChild(visitorPhoto);
             // visitorEmailElement.innerHTML = visitoremail;
             // visitorPhoneElement.innerHTML = visitorphone;
             // visitDateElement.innerHTML = visitdate;

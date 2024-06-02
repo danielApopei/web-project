@@ -135,6 +135,17 @@ async function deleteVisit(req, res, id){
     }
 }
 
+async function findHighestId(req, res){
+    try{
+        const highestId = await Visit.findHighestId();
+        console.log("in controller highest id: ", highestId);
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.end(JSON.stringify({max: highestId}));
+    } catch(error){
+        console.log(error)
+    }
+}
+
 async function updateVisit(req, res, id){
     try{
         const visit = await Visit.findById(id)
@@ -176,5 +187,6 @@ module.exports = {
     getVisit,
     createVisit,
     deleteVisit,
-    updateVisit
+    updateVisit,
+    findHighestId
 }
