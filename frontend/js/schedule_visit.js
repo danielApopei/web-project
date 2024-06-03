@@ -47,7 +47,7 @@ fetch('http://localhost:5000/high')
 .then(response => response.json())
 .then(data => {
     var id = data.max;
-    highestId = id + 1;
+    highestId = id;
 
     console.log('highestId: ', highestId);
     // Move the code that depends on highestId here

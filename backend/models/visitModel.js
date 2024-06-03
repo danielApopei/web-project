@@ -26,9 +26,14 @@ function findById(id){
         client.query(query, values, (err, res) => {
             if(err){
                 console.log(err.stack)
+                reject(err);
             } else {
-                console.log(res)
-                resolve(res.rows[0]);
+                if(res.rows.length === 0) {
+                    reject(new Error('No visit found with the provided id'));
+                } else {
+                    console.log(res)
+                    resolve(res.rows[0]);
+                }
             }
         });
     })
