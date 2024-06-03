@@ -35,12 +35,13 @@ form.addEventListener('submit', function(event) {
         others: others
     };
 
-    console.log(inmateData);
+    let token = localStorage.getItem('token');
 
     fetch('http://localhost:5000/api/inmates', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `${token}`
         },
         body: JSON.stringify(inmateData)
     }).then(response => response.json())
@@ -48,8 +49,7 @@ form.addEventListener('submit', function(event) {
         console.log(data)
         alert('Inmate registered successfully!');
     })
-    .catch(error => console.log('Error: ', error)
-    )
+    .catch(error => console.log('Error: ', error));
 
     console.log('Form submitted');
 });

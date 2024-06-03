@@ -26,7 +26,12 @@ let filteredList = inmateList;
 
 function loadInmateList() {
     inmateGrid.innerHTML = "";
-    filteredList.sort();
+    // filteredList.sort();
+    // sort list by name
+    filteredList.sort((a, b) => {
+        return a.name > b.name ? 1 : -1;
+    });
+
     if(filteredList.length == 0) {
         inmateGrid.innerHTML = "No matching results!";
         inmateGrid.style.display = "flex";
@@ -37,7 +42,10 @@ function loadInmateList() {
     inmateGrid.style.display = "grid";
     for(let i = 0; i < filteredList.length; i++) {
         let inmateLink = document.createElement("a");
-        inmateLink.textContent = filteredList[i];
+        inmateLink.textContent = filteredList[i].name;
+        inmateLink.href = `admin_inmate_info.html?id=${filteredList[i].id}`;
+        inmateLink.style.textDecoration = "none";
+        inmateLink.style.color = "black";
         inmateLink.classList.add("inmate-grid__inmate-item");
         inmateGrid.appendChild(inmateLink);
     }
@@ -77,7 +85,8 @@ function setupStuff() {
             return response.json();
         })
         .then(data => {
-            inmateList = data.map(item => item.name);
+            console.log(data);
+            inmateList = data;
             filteredList = inmateList;
             loadInmateList();
             setupSearchBox();

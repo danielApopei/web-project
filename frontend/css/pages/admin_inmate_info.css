@@ -70,10 +70,9 @@ main {
 
 #sentence-panel__panel-half-2__inner-loading{
     height: 100%;
-    width: 70%;
     background-color: var(--blue);
     border-radius: 0.5rem;
-    animation: fillWidth 0.8s ease-in-out forwards;
+    /* animation: fillWidth 0.8s ease-in-out forwards; */
 }
 
 
@@ -120,9 +119,6 @@ main {
 
 /* LAPTOP */
 @media screen and (min-width: 900px) {
-    :root{
-        font-size: min(2vw, 1.3rem);
-    }
     #export-panel{
         grid-template-columns: 1fr 1fr 1fr;
     }

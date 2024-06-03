@@ -28,6 +28,8 @@ function loadInmateList() {
     inmateGrid.style.display = "grid";
     for(let i = 0; i < filteredList.length; i++) {
         let inmateLink = document.createElement("a");
+        // set target to admin_inmate_info.html
+        inmateLink.href = "admin_inmate_info.html";
         inmateLink.textContent = filteredList[i];
         inmateLink.classList.add("inmate-grid__inmate-item");
         inmateGrid.appendChild(inmateLink);

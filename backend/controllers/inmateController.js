@@ -13,7 +13,7 @@ async function getInmates(req, res){
     try{
         const inmates = await Inmate.findAll()
 
-        res.writeHead(200, {'Content-Type': 'application/json'})
+        // res.writeHead(200, {'Content-Type': 'application/json'})
         res.end(JSON.stringify(inmates))
     } catch(error){
         console.log(error)
