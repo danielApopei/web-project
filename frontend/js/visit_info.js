@@ -133,4 +133,117 @@ document.getElementById('search-button').addEventListener('click', function() {
         .catch(error => console.error('Error:', error));
 });
 
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const exportButtons = document.querySelectorAll('.visit-section__button');
+    exportButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            switch(index) {
+                case 0:
+                    exportHTML();
+                    break;
+                case 1:
+                    exportCSV();
+                    break;
+                case 2:
+                    exportJSON();
+                    break;
+            }
+        });
+    });
+});
+
+function exportHTML() {
+    // Get the table data
+    const table = document.querySelector('.visit-section__table');
+    const tableHTML = table.outerHTML;
+
+    // Create a new Blob with the table HTML
+    const blob = new Blob([tableHTML], { type: 'text/html' });
+
+    // Create a link element
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'table.html';
+
+    // Append the link to the body (required for Firefox)
+    document.body.appendChild(link);
+
+    // Simulate a click on the link
+    link.click();
+
+    // Remove the link from the body
+    document.body.removeChild(link);
+
+    console.log('Exporting as HTML...');
+}
+
+function exportCSV() {
+    // Implement your logic for exporting as CSV
+    // Get the table data
+    const table = document.querySelector('.visit-section__table');
+    const rows = Array.from(table.querySelectorAll('tr'));
+
+    // Convert the table data to CSV
+    const csv = rows.map(row => {
+        const cols = Array.from(row.querySelectorAll('th, td'));
+        return cols.map(col => `"${col.textContent}"`).join(',');
+    }).join('\n');
+
+    // Create a new Blob with the CSV
+    const blob = new Blob([csv], { type: 'text/csv' });
+
+    // Create a link element
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'table.csv';
+
+    // Append the link to the body (required for Firefox)
+    document.body.appendChild(link);
+
+    // Simulate a click on the link
+    link.click();
+
+    // Remove the link from the body
+    document.body.removeChild(link);
+    console.log('Exporting as CSV...');
+}
+
+function exportJSON() {
+    // Implement your logic for exporting as JSON
+    // Get the table data
+    const table = document.querySelector('.visit-section__table');
+    const rows = Array.from(table.querySelectorAll('tr'));
+
+    // Convert the table data to JSON
+    const json = rows.map(row => {
+        const cols = Array.from(row.querySelectorAll('th, td'));
+        let obj = {};
+        for(let i = 0; i < cols.length; i += 2) {
+            obj[cols[i].textContent] = cols[i+1].textContent;
+        }
+        return obj;
+    });
+
+    // Create a new Blob with the JSON
+    const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
+
+    // Create a link element
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'table.json';
+
+    // Append the link to the body (required for Firefox)
+    document.body.appendChild(link);
+
+    // Simulate a click on the link
+    link.click();
+
+    // Remove the link from the body
+    document.body.removeChild(link);
+    console.log('Exporting as JSON...');
+}
 // hide for now
