@@ -34,9 +34,9 @@ function findById(id){
 
 function create(inmate){
     return new Promise((resolve, reject) => { 
-        const query = 'INSERT INTO inmates ( name, CNP, convictedFor, sentence, entryDate, releaseDate, birthDate, gender, goods, others) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)';
+        const query = 'INSERT INTO inmates ( name, CNP, convictedFor, sentence, entryDate, releaseDate, birthDate, gender, goods, others, address) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)';
         const newInmate = { ...inmate};
-        const values = [newInmate.name, newInmate.CNP, newInmate.convictedFor, newInmate.sentence, newInmate.entryDate, newInmate.releaseDate, newInmate.birthDate, newInmate.gender, newInmate.goods, newInmate.others];
+        const values = [newInmate.name, newInmate.CNP, newInmate.convictedFor, newInmate.sentence, newInmate.entryDate, newInmate.releaseDate, newInmate.birthDate, newInmate.gender, newInmate.goods, newInmate.others, newInmate.address];
         client.query(query, values, (err, res) => {
             if(err){
                 console.log(err.stack)

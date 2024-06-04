@@ -18,6 +18,7 @@ form.addEventListener('submit', function(event) {
     let entryDate = document.getElementById('entryDate').value;
     let releaseDate = document.getElementById('releaseDate').value;
     let birthDate = document.getElementById('birthDate').value;
+    let address = document.getElementById('address').value;
     let gender = document.getElementById('gender').value;
     let goods = document.getElementById('goods').value;
     let others = document.getElementById('others').value;
@@ -32,7 +33,9 @@ form.addEventListener('submit', function(event) {
         birthDate: birthDate,
         gender: gender,
         goods: goods,
-        others: others
+        others: others,
+        dateOfBirth: birthDate,
+        address: address
     };
 
     let token = localStorage.getItem('token');

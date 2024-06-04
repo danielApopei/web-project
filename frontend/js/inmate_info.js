@@ -33,6 +33,8 @@ fetch('http://localhost:5000/api/inmates', {
     const inmateCrime = document.getElementById('sentence-panel__crime');
     const entryDate = document.getElementById('sentence-panel__entry-date');
     const releaseDate = document.getElementById('sentence-panel__release-date');
+    const address = document.getElementById('general-info-panel__address');
+    const birthdate = document.getElementById('general-info-panel__date-of-birth');
 
     // set inmate data to html elements
     // set inmate data to html elements
@@ -40,6 +42,8 @@ fetch('http://localhost:5000/api/inmates', {
     inmateId.textContent = `[Inmate #${inmate.id}]`;
     inmateGender.textContent = `Gender: ${inmate.gender}`;
     inmateCrime.textContent = `Crime: ${inmate.convictedfor}`;
+    address.textContent = `Address: ${inmate.address}`;
+    birthdate.textContent = `Birthdate: ${inmate.birthdate}`;
 
     let entry = new Date(inmate.entrydate);
     let release = new Date(inmate.releasedate);
@@ -72,6 +76,11 @@ function updateTimers() {
 
     let percentage = (diffEntry / (diffEntry + diffRelease)) * 100;
     let progressBar = document.getElementById('sentence-panel__panel-half-2__inner-loading');
+    if(percentage >= 100)
+    {
+        percentage = 100;
+        progressBar.style.backgroundColor = 'limegreen';
+    }
     progressBar.style.width = `${percentage}%`;
     
     const entryDatePanel = document.getElementById('sentence-panel__entry-date');
